@@ -2,21 +2,22 @@
 
 import 'Styles/main.scss';
 
-window.addEventListener('DOMContentLoaded', () => {});
-
 const menuBtn = document.querySelector('.menu-btn');
 const navbarLinks = document.querySelector('#navbar-links');
 
-let menuOpen = false;
+window.addEventListener('DOMContentLoaded', () => {
+    let menuOpen = false;
 menuBtn.addEventListener('click', () => {
   if(!menuOpen) {
     menuBtn.classList.add('open');
     menuOpen = true;
-    navbarLinks.toggleClass("d-none");
+    document.querySelector('#navbar-links').style.display = 'flex';
   } else {
     menuBtn.classList.remove('open');
     menuOpen = false;
+    document.querySelector('#navbar-links').style.display = 'none';
   }
+});
 });
 
 
