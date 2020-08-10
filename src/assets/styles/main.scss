@@ -174,72 +174,425 @@ table {
 /* CODE AQUI */
 
 $yellow: #F2E678;
+$pink: #BC3E6D;
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
 
 #banner {
-	background: url(../images/vijo-banner.webp);
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
+background:linear-gradient(0deg, rgba(0,0,0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/vijo-banner.webp);
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;
+	@include breakpoint(xl) {
+		background:linear-gradient(0deg, rgba(0,0,0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/vijo-banner.webp), rgba($color: #000000, $alpha: 0.9);
+		background-size: auto;
+		background-repeat: no-repeat;
+		background-position: center;
+	}	
 }
 
 .vijo-logo {
-	height: 81px;
-	width: 78px;
+	height: 80px;
+	width: 80px;
+	margin: .5rem;
 }
 
-#navbar {
-	display: flex;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 600;
-	font-size: 15px;
-	color: whitesmoke;
+/* HAMBURGER MENU BUTTON */
 
-	#page-links {
-		color: whitesmoke;
-		justify-self: right;
-		list-style: none;
+  .menu-btn {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 80px;
+	height: 80px;
+	cursor: pointer;
+	transition: all .5s ease-in-out;
+	/* border: 3px solid #fff; */
+	@include breakpoint(lg) {
+		display: none;
+	}
+  }
+  .menu-btn__burger {
+	width: 50px;
+	height: 6px;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(255,101,47,.2);
+	transition: all .5s ease-in-out;
+  }
+  .menu-btn__burger::before,
+  .menu-btn__burger::after {
+	content: '';
+	position: absolute;
+	width: 50px;
+	height: 6px;
+	background: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(255,101,47,.2);
+	transition: all .5s ease-in-out;
+  }
+  .menu-btn__burger::before {
+	transform: translateY(-16px);
+  }
+  .menu-btn__burger::after {
+	transform: translateY(16px);
+  }
+  /* ANIMATION */
+  .menu-btn.open .menu-btn__burger {
+	transform: translateX(-50px);
+	background: transparent;
+	box-shadow: none;
+  }
+  .menu-btn.open .menu-btn__burger::before {
+	transform: rotate(45deg) translate(35px, -35px);
+  }
+  .menu-btn.open .menu-btn__burger::after {
+	transform: rotate(-45deg) translate(35px, 35px);
+  }
+
+/*END OF HAMBURGER MENU BUTTON */ 
+
+#navbar-links {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1em;
+	font-weight: 600;
+	ul {
+		padding: 0.5em 0;
+	}
+	ul a{
+		color: white;
+		text-decoration: none;
+	}
+	ul a:focus, ul a:hover {
+		color: $yellow;
 	}
 }
 
 #we-create-container {
 	text-transform: uppercase;
 	display: grid;
+	place-items: center;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	letter-spacing: 0.05em;
+	margin-top: 3em;
+	@include breakpoint (md) {
+		margin-top: 1em;
+	}
 
 	#white-letters {
-		font-size: 3em;
+		font-size: 4em;
 		color: whitesmoke;
 		justify-self: center;
 		@include breakpoint(md) {
-			font-size: 5em
+			font-size: 8em
 		}
 	}
 
 	#yellow-letters {
 		color: $yellow;
 		justify-self: center;
-		font-size: 1.5em;
+		font-size: 1.65em;
+		@include breakpoint(md) {
+			font-size: 3.35em;
+		}
 	}
 }
 
-#vijo-partners {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	justify-content: center;
+#vijo-partners-div {
+	display: flex;
+	flex-wrap: wrap;
 	background-color: black;
-	width: 100%;
+	justify-content: center;
+}
+
+#vijo-partners-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 #consultation-button {
 	display: flex;
 	justify-content: center;
-
+	padding: 8em 0;
 	button {
+		border: 2px solid White;
+		color: black;
 		font-family: 'Open Sans', sans-serif;
-		border: 0;
-		padding: 0.25em 3em;
+		background-color: transparent;
+		font-size: 1.1em;
+		color: white;
+		padding: 0.5em 5em;
 	}
+}
+
+#consultation-button button:hover {
+	background-color: whitesmoke;
+	color: black;
+	font-family: 'Open Sans', sans-serif;
+	transition: 500ms;
+	cursor: pointer;
+}
+
+#our-services {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	font-family: 'Open Sans', sans-serif;
+	padding: 1em 2em 2em 2em;
+	svg {
+		height: 6em;
+	}
+	span {
+		padding: 1em 0;
+	}
+}
+
+#pink-text {
+	color: $pink;
+	font-weight: 700;
+	letter-spacing: 0.15em;
+	font-size: 3.5em;
+	text-transform: uppercase;
+}
+
+#our-services-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.services {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto auto;
+	grid-template-areas: ". ." "description description";
+	justify-items: start;
+	align-items: center;
+}
+
+.description {
+	grid-area: description;
+	font-size: 1.5em;
+}
+
+.title {
+	font-weight: bold;
+	text-transform: capitalize;
+	font-size: 1.5em;
+	margin-left: 0.5em;
+}
+
+#client-feedback-title {
+	display: flex;
+	background-color: black;
+	text-transform: uppercase;
+	padding: 2em 1em;
+	span {
+		font-family: 'Open Sans', sans-serif;
+		color: whitesmoke;
+		font-size: 3em;
+		font-weight: bold;
+		letter-spacing: 0.15em;
+	}
+}
+
+#client-feedback {
+	background-image: url(../images/toronto-banner.webp);
+	@include breakpoint(xl) {
+		background:linear-gradient(0deg, rgba(0,0,0, 0.6), rgba(0, 0, 0, 0.1)), url(../images/toronto-banner.webp), rgba($color: #000000, $alpha: 0.9);
+		background-size: auto;
+		background-repeat: no-repeat;
+		background-position: center;
+	}	
+	background-size: stretch;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: auto;
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	svg {
+		fill: $yellow;
+	}
+	h1 {
+		color: $yellow;
+		font-weight: bolder;
+		font-size: 1.5em;
+		text-align: center;
+	}
+	h2 {
+		color: $yellow;
+		font-weight: 500;
+		font-size: 1.5em;
+		text-align: center;
+	}
+}
+
+.testimonial {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 3em;
+	justify-content: center;
+	min-width: 200px;
+	max-width: 400px;
+	text-align: center;
+}
+
+#testimonial-text {
+	span {
+		color: whitesmoke;
+		line-height: 1.7em;
+		font-size: 0.9em;
+	}
+	padding: 2em;
+}
+
+#client-photo {
+	img {
+		border-radius: 50%;
+		filter:grayscale(100%);
+	}
+}
+
+footer {
+	background-color: black;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	height: 100%;	
+}
+
+#footer-container {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1em 2em;
+	height: 100%;
+}
+
+
+#first-line span {
+	color: $yellow;
+	font-weight: bolder;
+	font-family: 'Exo', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-size: 27px;
+}
+
+#form {
+	display: flex;
+	flex-wrap: wrap;
+	height: 50px;
+	padding-top: 1em;
+}
+
+#contact {
+	 display: flex;
+	 height: 50px;
+	 personal-email {
+		 justify-content: left;
+	 }
+	 registered-tm {
+		 justify-content: right;
+	 }
+	 span {
+		color: $yellow;
+		font-weight: bolder;
+		font-family: 'Exo', sans-serif;
+		font-family: 'Roboto', sans-serif;
+		font-size: 18px;
+		font-weight: lighter;
+	 }
+}
+
+.text-input {
+	 padding-left: 24px;
+	 color: $yellow;
+	 background-color: #BF406D;
+	 font-family: 'Exo', sans-serif;
+	 font-family: 'Roboto', sans-serif;
+	 font-size: 16px;
+	 font-weight: bold;
+	 height: 100%;
+	 width: 360px;
+	 border-color: transparent;
+}
+
+.text-input:hover {
+	 background-color: #392556;
+}
+
+.text-input:focus {
+	outline: none;
+	background-color: #392556;
+}
+
+
+#submit {
+	 background-color: $yellow;
+	 font-family: 'Exo', sans-serif;
+	 font-family: 'Roboto', sans-serif;
+	 font-size: 18px;
+	 font-weight: 900;
+	 width: 180px;
+}
+
+#submit:hover {
+	background-color: #BF406D;
+	color: white;
+	transition-duration: 0.3s;
+}
+
+::placeholder {
+	 color: $yellow;
+ }
+
+ input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: hidden;
+	background-color: #eee;
+	border-color: transparent;
+}
+
+#name {
+	margin-left: 1em;
+}
+
+#contact {
+	margin: 1em 0;
+	display: grid;
+	grid-template-columns: 1.5fr 1.4fr 1fr;
+}
+
+.dot {
+	margin-left: 0.7em;
+	height: 38px;
+	width: 38px;
+	background-color: white;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#registred-tm {
+	justify-self: end;
+}
+
+.none {
+	display: none;
 }
