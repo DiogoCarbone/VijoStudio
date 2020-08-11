@@ -190,6 +190,14 @@ body {
 	height: 70vh;
 	position: relative;
 
+	@include breakpoint(lg) {
+		background-size: cover;
+		background-repeat: no-repeat;
+		width: 100%;
+		height: 100%;
+		padding-top: 39.41%;
+	}
+	
 	@include breakpoint(xl) {
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/vijo-banner.webp), rgba($color: #000000, $alpha: 0.9);
 		background-size: auto;
@@ -203,11 +211,10 @@ body {
 .vijo-logo {
 	height: 80px;
 	width: 80px;
-	margin: .5rem;
-
-	svg {
-		z-index: 1;
-	}
+	margin: .5rem auto;
+	position: absolute;
+	top: 1em;
+	left: 1em;
 }
 
 /* HAMBURGER MENU BUTTON */
@@ -219,8 +226,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 80px;
-	height: 80px;
+	width: 60px;
+	height: 60px;
 	cursor: pointer;
 	transition: all .5s ease-in-out;
 
@@ -279,7 +286,7 @@ body {
 /*END OF HAMBURGER MENU BUTTON */
 
 #navbar {
-	z-index: 10;
+	display: flex;
 }
 
 #navbar-links {
@@ -293,8 +300,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 1em;
 	font-weight: 600;
-	background-color: grey;
-	z-index: 10;
+	background-color: rgba($color: black, $alpha: 0.8);
 
 	ul {
 		padding: 0.5em 0;
@@ -312,15 +318,21 @@ body {
 
 	@include breakpoint(lg) {
 		display: flex;
-		position: relative;
-
+		flex-direction: row;
+		top: 0;
+		align-items: center;
+		justify-content: space-between;
+		background-color: transparent;
+		max-width: 980px;
+		margin: 0 auto;
 		ul {
-			padding: 0.5em 0;
+			padding: 0.5em 1em;
 		}
 
 		ul a {
 			color: white;
 			text-decoration: none;
+			font-size: 0.9em;
 		}
 
 		ul a:focus,
@@ -338,33 +350,41 @@ body {
 	font-weight: bold;
 	letter-spacing: 0.05em;
 	position: absolute;
-	top: 6em;
+	top: 9em;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 100%;
 
 
-	@include breakpoint (sm) {
-		margin-top: 1em;
+	@include breakpoint (md) {
+		top: 8em;
+	}
+
+	@include breakpoint(lg) {
+		top: 6em;
 	}
 
 	#white-letters {
-		font-size: 4em;
+		font-size: 2em;
 		color: whitesmoke;
 		justify-self: center;
 
 		@include breakpoint(md) {
-			font-size: 8em
+			font-size: 2.5em
 		}
+	}
+
+	@include breakpoint(lg) {
+
 	}
 
 	#yellow-letters {
 		color: $yellow;
 		justify-self: center;
-		font-size: 1.65em;
+		font-size: 1.4em;
 
 		@include breakpoint(md) {
-			font-size: 3.35em;
+			font-size: 2em;
 		}
 	}
 }
@@ -387,18 +407,27 @@ body {
 	display: flex;
 	justify-content: center;
 	position: absolute;
-	bottom: 4em;
+	bottom: 2em;
 	left: 50%;
-	transform: translateX(-50%);
+	transform: translateX(-53%);
+
+	@include breakpoint(md) {
+		bottom: 1em;
+	}
 
 	button {
 		border: 2px solid White;
 		color: black;
 		font-family: 'Open Sans', sans-serif;
 		background-color: transparent;
-		font-size: 1.1em;
+		font-size: 1em;
 		color: white;
-		padding: 0.5em 5em;
+		padding: 0.5em;
+
+		@include breakpoint(md) {
+			font-size: 1em;
+			padding: 0.5em 8em;
+		}
 	}
 }
 
@@ -493,7 +522,20 @@ body {
 }
 
 #client-feedback {
-	background-image: url(../images/toronto-banner.webp);
+	background-image: url(../images/toronto-banner-sm.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: auto;
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	@include breakpoint(md) {
+		background-image: url(../images/toronto-banner.webp);
+		background-size: cover;
+	}
 
 	@include breakpoint(xxl) {
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(../images/toronto-banner.webp), rgba($color: #000000, $alpha: 0.9);
@@ -501,16 +543,6 @@ body {
 		background-repeat: no-repeat;
 		background-position: center;
 	}
-
-	background-size: fill;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: auto;
-	font-family: 'Open Sans',
-	sans-serif;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
 
 	svg {
 		fill: $yellow;
@@ -529,6 +561,14 @@ body {
 		font-size: 1.5em;
 		text-align: center;
 	}
+}
+
+#testimonial-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 100%;
 }
 
 .testimonial {
@@ -722,5 +762,5 @@ input {
 }
 
 .d-none {
-	display: none !important;
+	display: none;
 }

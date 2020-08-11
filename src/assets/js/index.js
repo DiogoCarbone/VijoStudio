@@ -19,5 +19,3 @@ menuBtn.addEventListener('click', () => {
   }
 });
 });
-
-
