@@ -697,7 +697,13 @@ input {
 	  border-color: transparent;
   }
 
-::placeholder {
+:-moz-placeholder {
+	color: $yellow;
+}
+:-ms-input-placeholder {
+	color: $yellow;
+}
+::-webkit-input-placeholder {
 	color: $yellow;
 }
 
