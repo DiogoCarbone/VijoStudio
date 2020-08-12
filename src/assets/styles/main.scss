@@ -744,6 +744,7 @@ input {
 
 
 #submit {
+	-webkit-appearance: none;
 	padding: 0.6em;
 	background-color: $yellow;
 	font-family: 'Exo', sans-serif;
@@ -829,20 +830,4 @@ input {
 
 .d-none {
 	display: none;
-}
-
-.gotopbtn {
-	position: fixed;
-	background: rgba($color: white, $alpha: 0.5);
-	width: 50px;
-	height: 50px;
-	bottom: 40px;
-	right: 50px;
-	border-radius: 10%;
-
-	text-decoration: none;
-	text-align: center;
-	line-height: 50px;
-	color: rgba($color: white, $alpha: 0.5);
-	font-size: 50px;
 }

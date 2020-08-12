@@ -19,4 +19,3 @@ menuBtn.addEventListener('click', () => {
   }
 });
 });
-
