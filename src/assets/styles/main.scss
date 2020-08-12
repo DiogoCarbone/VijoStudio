@@ -672,6 +672,19 @@ footer {
 	align-items: center;
 	justify-content: center;
 	align-items: flex-end;
+	
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: $yellow;
+		opacity: 1; /* Firefox */
+	  }
+	  
+	  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: $yellow;
+	  }
+	  
+	  ::-ms-input-placeholder { /* Microsoft Edge */
+		color: $yellow;
+	  }
 }
 
 #client-name-container {
@@ -704,18 +717,6 @@ input {
 	  border-color: transparent;
   }
 
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-	color: $yellow;
-	opacity: 1; /* Firefox */
-  }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-	color: $yellow;
-  }
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
-	color: $yellow;
-  }
 
 .text-input {
 	padding-top: 1em;
