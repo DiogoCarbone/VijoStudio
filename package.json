@@ -72,6 +72,7 @@
 		"cleave.js": "^1.6.0",
 		"inputmask": "^5.0.3",
 		"jquery": "^3.5.1",
+		"micromodal": "^0.4.6",
 		"parsleyjs": "^2.9.2",
 		"popper.js": "^1.16.1",
 		"slim-select": "^1.26.0"

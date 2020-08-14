@@ -1,0 +1,55 @@
+#about {
+
+	#banner {
+		background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner-sm.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		height: 605px;
+		position: relative;
+
+		@include breakpoint(md) {
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner-md.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 450px;
+		}
+
+		@include breakpoint(lg) {
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner-md.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+			height: 80vh;
+		}
+
+		@include breakpoint(xl) {
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner.png), rgba($color: #000000, $alpha: 0.9);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+			height: 80vh;
+		}
+
+		width: 100%;
+	}
+
+	#about-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	#we-create-container {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	#consultation-button {
+		display: flex;
+		justify-content: flex-start;
+		position: absolute;
+		bottom: 5.5em;
+		left: 50%;
+		transform: translateX(-53%);
+	}
+}
