@@ -42,822 +42,199 @@
 @import './reset/reset';
 @import './components/modal';
 @import './pages/about';
-
-/* CODE AQUI */
+@import './pages/what-we-do';
+@import './layout/banner.scss';
+@import './layout/footer';
 
 $yellow: #F2E678;
 $pink: #BC3E6D;
 
-
-html {
-	scroll-behavior: smooth;
-}
-
-body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-#banner {
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/vijo-banner.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 70vh;
-	position: relative;
-
-	@include breakpoint(md) {
-		height: 80vh;
+#index-page {
+	#vijo-partners-div {
+		display: flex;
+		flex-wrap: wrap;
+		background-color: black;
+		justify-content: center;
+		align-content: center;
 	}
 
-	@include breakpoint(lg) {
-		background-size: cover;
-		background-repeat: no-repeat;
-		height: 90vh;
+	.vijo-partners-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
 	}
 
-	@include breakpoint(xl) {
-		background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/vijo-banner.png), rgba($color: #000000, $alpha: 0.9);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
+	#our-services {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		font-family: 'Open Sans', sans-serif;
+		max-width: 980px;
+		margin: 0 auto;
+		padding: 0em 0 2em 0;
+
+		svg {
+			height: 3em;
+			width: 4em;
+		}
+
+		span {
+			padding: 0.5em 0;
+		}
 	}
 
-	width: 100%;
-}
-
-
-
-/* HAMBURGER MENU BUTTON */
-
-.menu-btn {
-	position: absolute;
-	top: 1rem;
-	right: 1rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 60px;
-	height: 60px;
-	cursor: pointer;
-	transition: all .5s ease-in-out;
-
-	/* border: 3px solid #fff; */
-	@include breakpoint(lg) {
-		display: none;
+	#pink-text {
+		color: $pink;
+		font-weight: 700;
+		letter-spacing: 0.15em;
+		font-size: 3.5em;
+		text-transform: uppercase;
 	}
 
-	z-index: 1;
-}
+	#our-services-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
 
-.menu-btn__burger {
-	width: 50px;
-	height: 6px;
-	background: #fff;
-	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-	transition: all .5s ease-in-out;
-}
+	.services {
+		display: grid;
+		grid-template-columns: 5em minmax(12em, 23em);
+		grid-template-rows: auto 1fr;
+		grid-template-areas: ". .""description description";
+		justify-items: start;
+		align-items: center;
+		padding-top: 2em;
+		margin: 0 0.5em;
+	}
 
-.menu-btn__burger::before,
-.menu-btn__burger::after {
-	content: '';
-	position: absolute;
-	width: 50px;
-	height: 6px;
-	background: #fff;
-	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-	transition: all .5s ease-in-out;
-}
+	.description {
+		grid-area: description;
+		font-size: 0.9em;
+		letter-spacing: 0.03em;
+		line-height: 1.3em;
+		display: flex;
+		align-items: flex-start;
+	}
 
-.menu-btn__burger::before {
-	transform: translateY(-16px);
-}
+	.title {
+		font-weight: bold;
+		text-transform: capitalize;
+		font-size: 1.2em;
+		margin-left: 0.5em;
+		justify-self: left;
+	}
 
-.menu-btn__burger::after {
-	transform: translateY(16px);
-}
-
-/* ANIMATION */
-.menu-btn.open .menu-btn__burger {
-	transform: translateX(-50px);
-	background: transparent;
-	box-shadow: none;
-}
-
-.menu-btn.open .menu-btn__burger::before {
-	transform: rotate(45deg) translate(35px, -35px);
-}
-
-.menu-btn.open .menu-btn__burger::after {
-	transform: rotate(-45deg) translate(35px, 35px);
-}
-
-/*END OF HAMBURGER MENU BUTTON */
-
-#navbar {
-	display: flex;
-
-	@include breakpoint(lg) {
-		padding-top: 3em;
+	#client-feedback-text-box {
+		display: flex;
+		flex-wrap: wrap;
+		font-family: 'Open Sans', sans-serif;
 		max-width: 980px;
 		margin: 0 auto;
 	}
-}
 
-.vijo-logo {
-	height: 80px;
-	width: 80px;
-	margin: .5rem auto;
-	position: absolute;
-	top: 1em;
-	left: 1em;
-
-	@include breakpoint(lg) {
-		position: absolute;
-		top: 1em;
-		left: 2em;
-	}
-}
-
-#navbar-links {
-	top: 0;
-	width: 100%;
-	display: none;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 1em;
-	font-weight: 600;
-	background-color: rgba($color: black, $alpha: 0.5);
-
-	ul {
-		padding: 0.5em 0;
-	}
-
-	ul a {
-		color: white;
-		text-decoration: none;
-	}
-
-	ul a:focus,
-	ul a:hover {
-		color: $yellow;
-	}
-
-	@include breakpoint(lg) {
+	#client-feedback-title {
 		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		align-items: center;
-		background-color: transparent;
+		background-color: black;
+		text-transform: uppercase;
+		padding: 2em 0;
 
-		ul {
-			padding: 0.5em 1em;
-		}
-
-		ul a {
-			color: white;
-			text-decoration: none;
-			font-size: 0.9em;
-		}
-
-		ul a:focus,
-		ul a:hover {
-			color: $yellow;
-		}
-	}
-}
-
-#we-create-container {
-	text-transform: uppercase;
-	display: grid;
-	place-items: center;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: bold;
-	letter-spacing: 0.05em;
-	position: absolute;
-	top: 9em;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 100%;
-
-	@include breakpoint (md) {
-		top: 8em;
-	}
-
-	@include breakpoint(lg) {
-		top: 6em;
-	}
-
-	#white-letters {
-		font-size: 2em;
-		color: whitesmoke;
-		justify-self: center;
-
-		@include breakpoint(md) {
-			font-size: 2.5em
-		}
-
-		@include breakpoint(lg) {
-			font-size: 8em;
+		span {
+			font-family: 'Open Sans', sans-serif;
+			color: whitesmoke;
+			font-size: 3em;
+			font-weight: bold;
+			letter-spacing: 0.15em;
 		}
 	}
 
-	#yellow-letters {
-		color: $yellow;
-		justify-self: center;
-		font-size: 1.4em;
-
-		@include breakpoint(md) {
-			font-size: 2em;
-		}
-
-		@include breakpoint(lg) {
-			font-size: 3.3em;
-		}
-	}
-}
-
-#consultation-button {
-	display: flex;
-	justify-content: center;
-	position: absolute;
-	bottom: 5.5em;
-	left: 50%;
-	transform: translateX(-53%);
-
-	@include breakpoint(md) {
-		bottom: 7em;
-	}
-
-	@include breakpoint(lg) {
-		bottom: 10em;
-	}
-
-	button {
-		border: 2px solid White;
-		color: black;
-		font-family: 'Open Sans', sans-serif;
-		background-color: transparent;
-		font-size: 1em;
-		color: white;
-		padding: 0.5em;
-
-		@include breakpoint(md) {
-			font-size: 1em;
-			padding: 0.5em 8em;
-		}
-
-		@include breakpoint(lg) {
-			font-size: 1.1em;
-			padding: 0.5em 6em;
-		}
-	}
-}
-
-#consultation-button button:hover {
-	background-color: whitesmoke;
-	color: black;
-	font-family: 'Open Sans', sans-serif;
-	transition: 500ms;
-	cursor: pointer;
-}
-
-#vijo-partners-div {
-	display: flex;
-	flex-wrap: wrap;
-	background-color: black;
-	justify-content: center;
-	align-content: center;
-}
-
-.vijo-partners-container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-}
-
-#our-services {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	font-family: 'Open Sans', sans-serif;
-	max-width: 980px;
-	margin: 0 auto;
-	padding: 0em 0 2em 0;
-
-	svg {
-		height: 3em;
-		width: 4em;
-	}
-
-	span {
-		padding: 0.5em 0;
-	}
-}
-
-#pink-text {
-	color: $pink;
-	font-weight: 700;
-	letter-spacing: 0.15em;
-	font-size: 3.5em;
-	text-transform: uppercase;
-}
-
-#our-services-container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-}
-
-.services {
-	display: grid;
-	grid-template-columns: 5em minmax(12em, 23em);
-	grid-template-rows: auto 1fr;
-	grid-template-areas: ". .""description description";
-	justify-items: start;
-	align-items: center;
-	padding-top: 2em;
-	margin: 0 0.5em;
-}
-
-.description {
-	grid-area: description;
-	font-size: 0.9em;
-	letter-spacing: 0.03em;
-	line-height: 1.3em;
-	display: flex;
-	align-items: flex-start;
-}
-
-.title {
-	font-weight: bold;
-	text-transform: capitalize;
-	font-size: 1.2em;
-	margin-left: 0.5em;
-	justify-self: left;
-}
-
-#client-feedback-text-box {
-	display: flex;
-	flex-wrap: wrap;
-	font-family: 'Open Sans', sans-serif;
-	max-width: 980px;
-	margin: 0 auto;
-}
-
-#client-feedback-title {
-	display: flex;
-	background-color: black;
-	text-transform: uppercase;
-	padding: 2em 0;
-
-	span {
-		font-family: 'Open Sans', sans-serif;
-		color: whitesmoke;
-		font-size: 3em;
-		font-weight: bold;
-		letter-spacing: 0.15em;
-	}
-}
-
-#client-feedback {
-	background-image: url(../images/toronto-banner-sm.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: auto;
-	font-family: 'Open Sans', sans-serif;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-
-	@include breakpoint(md) {
-		background-image: url(../images/toronto-banner.webp);
-		background-size: cover;
-	}
-
-	@include breakpoint(xl) {
-		background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(../images/toronto-banner.webp), rgba($color: #000000, $alpha: 0.9);
+	#client-feedback {
+		background-image: url(../images/toronto-banner-sm.png);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
-	}
-
-	@include breakpoint(xxl) {
-		background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(../images/toronto-banner.webp), rgba($color: #000000, $alpha: 0.9);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-
-	svg {
-		fill: $yellow;
-	}
-
-	h1 {
-		color: $yellow;
-		font-weight: bolder;
-		font-size: 1.5em;
-		text-align: center;
-	}
-
-	h2 {
-		color: $yellow;
-		font-weight: 500;
-		font-size: 1.5em;
-		text-align: center;
-	}
-}
-
-#testimonial-container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	width: 100%;
-}
-
-.testimonial {
-	display: flex;
-	flex-wrap: wrap;
-	padding: 3em;
-	justify-content: center;
-	min-width: 200px;
-	max-width: 400px;
-	text-align: center;
-}
-
-#quotation-mark {
-	height: 2em;
-	width: 3em;
-	transform: rotate(180deg);
-}
-
-#testimonial-text {
-	span {
-		color: whitesmoke;
-		line-height: 1.7em;
-		font-size: 0.9em;
-	}
-
-	padding: 2em;
-}
-
-#client-photo {
-	img {
-		border-radius: 50%;
-		filter: grayscale(100%);
-	}
-}
-
-footer {
-	background-color: black;
-}
-
-#footer-container {
-	display: flex;
-	flex-direction: column;
-	padding: 0 1em;
-}
-
-#footer-title-container {
-	max-width: 980px;
-	margin-right: auto;
-	padding: 2em 0;
-
-	@include breakpoint(md) {
-		margin-left: 8em;
-	}
-
-	@include breakpoint(lg) {
-		margin-left: 10em;
-		margin-top: 2em;
-	}
-
-	span {
-		color: $yellow;
-		font-family: 'Roboto', sans-serif;
-		font-weight: 800;
-		font-size: 1.5em;
-
-		@include breakpoint (lg) {
-			font-weight: 600;
-		}
-	}
-}
-
-#contact-form-container {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	align-items: flex-end;
-
-	::placeholder {
-		/* Chrome, Firefox, Opera, Safari 10.1+ */
-		color: $yellow;
-		opacity: 1;
-		/* Firefox */
-	}
-
-	:-ms-input-placeholder {
-		/* Internet Explorer 10-11 */
-		color: $yellow;
-	}
-
-	::-ms-input-placeholder {
-		/* Microsoft Edge */
-		color: $yellow;
-	}
-}
-
-#client-name-container {
-	display: flex;
-	flex: column;
-	flex-wrap: wrap;
-	align-items: flex-end;
-	margin-top: 2em;
-	max-width: 575px;
-	height: 100%;
-	width: 100%;
-
-	@include breakpoint(lg) {
-		flex-direction: row;
-		flex-wrap: nowrap;
-		margin-top: 0;
-	}
-
-	@include breakpoint(xl) {
-		margin-left: 1em;
-	}
-}
-
-input {
-	border-top-style: hidden;
-	border-right-style: hidden;
-	border-left-style: hidden;
-	border-bottom-style: hidden;
-	background-color: #eee;
-	border-color: transparent;
-}
-
-
-.text-input {
-	padding-top: 1em;
-	padding-left: 1em;
-	padding-bottom: 1em;
-	color: $yellow;
-	background-color: #BF406D;
-	font-family: 'Roboto', sans-serif;
-	font-size: 1em;
-	font-weight: bold;
-	height: 100%;
-	max-width: 550px;
-	width: 100%;
-	border-color: transparent;
-}
-
-.text-input:hover {
-	background-color: #392556;
-}
-
-.text-input:focus {
-	outline: none;
-	background-color: #392556;
-}
-
-
-#submit {
-	-webkit-appearance: none;
-	padding: 0.6em;
-	background-color: $yellow;
-	font-family: 'Exo', sans-serif;
-	font-family: 'Roboto', sans-serif;
-	font-size: 1.2em;
-	font-weight: 900;
-	width: 99%;
-	margin-top: 1.5em;
-
-	@include breakpoint(lg) {
-		max-width: 8em;
-		max-width: 200px;
-	}
-}
-
-#submit:hover {
-	background-color: #BF406D;
-	color: white;
-	transition-duration: 0.3s;
-}
-
-#social-media-info {
-	display: flex;
-	flex-direction: column;
-	margin: 3em 0;
-	justify-content: center;
-	align-items: center;
-
-	span {
-		color: $yellow;
-		font-family: 'Roboto', sans-serif;
-		font-size: 1em;
-	}
-}
-
-#social-media-icons {
-	margin-top: 2em;
-}
-
-#trademark {
-	margin-top: 1em;
-
-	span {
-		color: $yellow;
-		font-family: 'Roboto', sans-serif;
-		font-size: 0.8em;
-	}
-}
-
-#yt-icon {
-	background-image: url(../images/yt-icon.webp);
-	margin-left: 0.7em;
-	height: 38px;
-	width: 38px;
-	border-radius: 50%;
-	display: inline-block;
-}
-
-#in-icon {
-	background-image: url(../images/in-icon.webp);
-	margin-left: 0.7em;
-	height: 38px;
-	width: 38px;
-	border-radius: 50%;
-	display: inline-block;
-}
-
-#fb-icon {
-	background-image: url(../images/fb-icon.webp);
-	margin-left: 0.7em;
-	height: 38px;
-	width: 38px;
-	border-radius: 50%;
-	display: inline-block;
-}
-
-#ig-icon {
-	background-image: url(../images/ig-icon.webp);
-	margin-left: 0.7em;
-	height: 38px;
-	width: 38px;
-	border-radius: 50%;
-	display: inline-block;
-}
-
-.d-none {
-	display: none;
-}
-
-
-/* WHAT WE DO STYLES */
-
-#what-we-do {
-
-	#banner {
-		background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/what-we-do-banner.png);
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: 70% 50%;
-		height: 380px;
-		position: relative;
+		height: auto;
+		font-family: 'Open Sans', sans-serif;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 
 		@include breakpoint(md) {
-			height: 50vh;
-			max-height: 420px;
-		}
-
-		@include breakpoint(lg) {
+			background-image: url(../images/toronto-banner.webp);
 			background-size: cover;
-			background-repeat: no-repeat;
-			height: 60vh;
-			max-height: 500px;
 		}
 
 		@include breakpoint(xl) {
-			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../images/what-we-do-banner.png), rgba($color: #000000, $alpha: 0.9);
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(../images/toronto-banner.webp), rgba($color: #000000, $alpha: 0.9);
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
-			height: 50vh;
-			max-height: 500px;
 		}
 
+		@include breakpoint(xxl) {
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1)), url(../images/toronto-banner.webp), rgba($color: #000000, $alpha: 0.9);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		svg {
+			fill: $yellow;
+		}
+
+		h1 {
+			color: $yellow;
+			font-weight: bolder;
+			font-size: 1.5em;
+			text-align: center;
+		}
+
+		h2 {
+			color: $yellow;
+			font-weight: 500;
+			font-size: 1.5em;
+			text-align: center;
+		}
+	}
+
+	#testimonial-container {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-around;
 		width: 100%;
 	}
 
-	#consultation-button {
+	.testimonial {
 		display: flex;
+		flex-wrap: wrap;
+		padding: 3em;
 		justify-content: center;
-		position: absolute;
-		bottom: 2em;
-		left: 50%;
-		transform: translateX(-53%);
-
-		@include breakpoint(md) {
-			bottom: 5em;
-		}
-
-		@include breakpoint(lg) {
-			bottom: 8em;
-		}
-
-		button {
-			border: 2px solid White;
-			color: black;
-			font-family: 'Open Sans', sans-serif;
-			background-color: rgba($color: black, $alpha: 0.5);
-			font-size: 1em;
-			color: white;
-			padding: 0.5em;
-
-			@include breakpoint(md) {
-				font-size: 1em;
-				padding: 0.5em 8em;
-			}
-
-			@include breakpoint(lg) {
-				font-size: 1.1em;
-				padding: 0.5em 5em;
-			}
-		}
+		min-width: 200px;
+		max-width: 400px;
+		text-align: center;
 	}
 
-	#consultation-button button:hover {
-		background-color: whitesmoke;
-		color: black;
-		font-family: 'Open Sans', sans-serif;
-		transition: 500ms;
-		cursor: pointer;
+	#quotation-mark {
+		height: 2em;
+		width: 3em;
+		transform: rotate(180deg);
 	}
 
-	#videos-container {
-		display: flex;
-		flex-direction: column;
-		background-color: black;
-		align-items: center;
-
-		@include breakpoint(md) {
-			padding: 1em 0.5em;
+	#testimonial-text {
+		span {
+			color: whitesmoke;
+			line-height: 1.7em;
+			font-size: 0.9em;
 		}
 
-		div {
-			padding-top: 1em;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
+		padding: 2em;
+	}
+
+	#client-photo {
+		img {
+			border-radius: 50%;
+			filter: grayscale(100%);
 		}
 	}
-}
-
-
-/* ABOUT STYLES */
-
-
-
-.nav-link {
-	position: relative;
-
-	&.active {
-		color: yellow !important;
-
-		&:after {
-			transform: scaleX(1);
-		}
-	}
-
-	&:after {
-		content: '';
-		height: 1px;
-		width: 100%;
-		background-color: white;
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		transform: scaleX(0);
-		transition: transform 0.2s ease-in-out;
-	}
-
-	&:hover {
-		&:after {
-			transform: scaleX(1);
-		}
-	}
-
-
 }
