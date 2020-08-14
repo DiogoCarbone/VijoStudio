@@ -37,6 +37,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-content: center;
         background-color: black;
     }
 
@@ -60,20 +61,29 @@
     }
     
     .thumbnail-container {
-        position: relative;
-        min-width: 375px;
-        min-height: 211px;
+        flex: 1 1 380px;
         width: 100%;
-        background-size: 105%;
-        background-repeat: no-repeat;
-        background-position: center top;
-        flex: 1 1 480px;
-        transition: background-size 0.5s ease-in; 
-        &:hover {
-            background-size: 100%;
-            cursor: pointer;
+        position: relative;
+        svg {
+            left: 50%;
+            bottom: 50%;
+            position: absolute;
+            background-color: rgba($color: black, $alpha: 0.4);
+            border-radius: 6px;
+            color: rgba($color: white, $alpha: 0.7);
+            width: 40px;
+            height: 40px;
+        }
+        img {
+            max-width: 100%;
+            transition: background-size 0.5s ease-in; 
+            &:hover {
+                background-size: 100%;
+                cursor: pointer;
+            }
         }
     }
+    /* 
     
     #monday {
         background-image: url(../../images/monday-thumbnail.png);
@@ -97,5 +107,5 @@
 
     #melio-online {
         background-image: url(../../images/melio-thumbnail1.png);
-    }
+    } */
 }
