@@ -52,6 +52,7 @@
         bottom: 0;
         padding: 0.3em 0;
         span {
+            text-transform: capitalize;
             font-family: 'Open Sans', sans-serif;
             align-items: center;
             color: whitesmoke;
@@ -64,23 +65,35 @@
         flex: 1 1 380px;
         width: 100%;
         position: relative;
+        cursor: pointer;
+        overflow: hidden;
+
+        &:hover {
+            img {
+                transform: scale(1.05);
+            }
+            svg {
+                background-color: rgba($color: black, $alpha: 0.3);
+                color: rgba($color: white, $alpha: 0.8);
+            }
+        }
+
         svg {
             left: 50%;
             bottom: 50%;
             position: absolute;
-            background-color: rgba($color: black, $alpha: 0.4);
-            border-radius: 6px;
-            color: rgba($color: white, $alpha: 0.7);
-            width: 40px;
-            height: 40px;
+            background-color: rgba($color: black, $alpha: 0.0);
+            border-radius: 50%;
+            color: rgba($color: white, $alpha: 0.0);
+            width: 60px;
+            height: 60px;
+            transform: translate(-50%, 50%);
+            transition: 0.5s ease-in;
         }
+
         img {
             max-width: 100%;
-            transition: background-size 0.5s ease-in; 
-            &:hover {
-                background-size: 100%;
-                cursor: pointer;
-            }
+            transition: transform 0.5s ease-in-out;
         }
     }
     /* 

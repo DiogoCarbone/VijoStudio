@@ -1,0 +1,40 @@
+
+#contact { 
+    
+    #banner { 
+        background-image: url(../../images/contact-banner.png);
+        background-size: cover;
+    }
+    
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        background: transparent;
+        span {
+            color: whitesmoke;
+        }
+    }
+
+    input {
+        background: transparent;
+        border-bottom: 2px solid black;
+        width: 350px;
+        #myInput::-webkit-input-placeholder {
+        
+         border-style:solid;
+        border-width:medium;
+        }
+        #myInput:-moz-placeholder {
+         border-style:solid;
+        border-width:medium;
+        }
+        #myInput:-ms-input-placeholder {
+         border-style:solid;
+        border-width:medium;
+        }
+    }
+
+    button {
+        display: none;
+    }
+}
