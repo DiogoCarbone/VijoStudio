@@ -9,13 +9,13 @@
         position: relative;
     
         @include breakpoint(md) {
-            height: 80vh;
+            height: 420px;
         }
     
         @include breakpoint(lg) {
             background-size: cover;
             background-repeat: no-repeat;
-            height: 90vh;
+            height: 450px;
         }
     
         @include breakpoint(xl) {
@@ -62,11 +62,16 @@
     }
     
     .thumbnail-container {
-        flex: 1 1 380px;
+        flex: 1 1 33%;
+        min-width: 320px;
         width: 100%;
         position: relative;
         cursor: pointer;
         overflow: hidden;
+
+        @include breakpoint(lg) {
+            flex: 0 1 33%;
+        }
 
         &:hover {
             img {
@@ -82,13 +87,18 @@
             left: 50%;
             bottom: 50%;
             position: absolute;
-            background-color: rgba($color: black, $alpha: 0.0);
+            background-color: rgba($color: black, $alpha: 0.3);
             border-radius: 50%;
-            color: rgba($color: white, $alpha: 0.0);
+            color: rgba($color: white, $alpha: 0.8);
             width: 60px;
             height: 60px;
             transform: translate(-50%, 50%);
             transition: 0.5s ease-in;
+
+            @include breakpoint(lg) {
+                background-color: rgba($color: black, $alpha: 0.0);
+                color: rgba($color: white, $alpha: 0.0);                
+            }
         }
 
         img {
@@ -96,29 +106,4 @@
             transition: transform 0.5s ease-in-out;
         }
     }
-    /* 
-    
-    #monday {
-        background-image: url(../../images/monday-thumbnail.png);
-        }
-
-    #melio-loan {
-        background-image: url(../../images/melio-thumbnail.png);
-    }
-
-    #poalim {
-        background-image: url(../../images/poalim-thumbnail.png);
-    }
-
-    #guardicore {
-        background-image: url(../../images/guardicore-thumnail.png);
-    }
-
-    #gala {
-        background-image: url(../../images/hulk-arm-thumbnail.png);
-    }
-
-    #melio-online {
-        background-image: url(../../images/melio-thumbnail1.png);
-    } */
 }

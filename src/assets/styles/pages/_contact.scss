@@ -19,19 +19,6 @@
         background: transparent;
         border-bottom: 2px solid black;
         width: 350px;
-        #myInput::-webkit-input-placeholder {
-        
-         border-style:solid;
-        border-width:medium;
-        }
-        #myInput:-moz-placeholder {
-         border-style:solid;
-        border-width:medium;
-        }
-        #myInput:-ms-input-placeholder {
-         border-style:solid;
-        border-width:medium;
-        }
     }
 
     button {
