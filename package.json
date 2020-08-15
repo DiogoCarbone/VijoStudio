@@ -70,6 +70,7 @@
 		"animejs": "^3.2.0",
 		"bootstrap": "^4.5.0",
 		"cleave.js": "^1.6.0",
+		"emailjs-com": "^2.6.3",
 		"inputmask": "^5.0.3",
 		"jquery": "^3.5.1",
 		"micromodal": "^0.4.6",

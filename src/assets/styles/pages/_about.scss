@@ -1,25 +1,26 @@
 #about {
-
+		overflow-x: hidden !important;
 	#banner {
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner-sm.png);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
-		height: 605px;
 		position: relative;
+		min-height: 80vh;
 
 		@include breakpoint(md) {
-			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner-md.png);
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner-sm.png);
 			background-repeat: no-repeat;
 			background-size: cover;
-			height: 450px;
+			background-position: top;
 		}
 
 		@include breakpoint(lg) {
-			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner-md.png);
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner-lg.png);
 			background-size: cover;
 			background-repeat: no-repeat;
-			height: 80vh;
+			height: 100vh;
+			max-width: 100%;
 		}
 
 		@include breakpoint(xl) {
@@ -27,7 +28,7 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
-			height: 80vh;
+			max-height: 700px;
 		}
 
 		width: 100%;
@@ -35,15 +36,88 @@
 
 	#about-container {
 		display: flex;
+		flex-wrap: wrap;
 		flex-direction: column;
 	}
 
 	#we-create-container {
-		position: relative;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		margin-left: 0.5em;
+
+		@include breakpoint (md){
+			margin-left: 0;
+			#white-letters {
+				font-size: 4em;
+			}
+		}
+
+		@include breakpoint (lg) {
+			margin-top: 5em;
+			max-width: 800px;
+			#white-letters {
+				font-size: 5em;
+			}
+		}
 	}
 
-	#consultation-button {
-		position: relative;
+	#text-container {
+		padding-right: 0.5em;
+		margin-top: 2em;
+		text-transform: none;
+		max-width: 90%;
+		@include breakpoint(lg){
+			font-size: 1.25em;
+			max-width: 75%;
+		}
+		#about-text {
+			font-size: 1em;
+			font-weight: 400;
+		}
+	}
+
+	#consultation-button1 {
+		display: flex;
+		justify-content: flex-start;
+		bottom: 5.5em;
+		margin-top: 3em;
+		@include breakpoint(md) {
+			bottom: 7em;
+		}
+	
+		@include breakpoint(lg) {
+			bottom: 6em;
+		}
+	
+		button {
+			border: 2px solid White;
+			color: black;
+			font-family: 'Open Sans', sans-serif;
+			background-color: transparent;
+			font-size: 1em;
+			color: white;
+			padding: 0.5em;
+	
+			@include breakpoint(md) {
+				font-size: 1em;
+				padding: 0.5em 8em;
+			}
+	
+			@include breakpoint(lg) {
+				font-size: 1.1em;
+				padding: 0.5em 6em;
+			}
+		}
+	}
+	
+	#consultation-button1 button:hover {
+		background-color: whitesmoke;
+		color: black;
+		font-family: 'Open Sans', sans-serif;
+		transition: 500ms;
+		cursor: pointer;
 	}
 
 	#about-text {

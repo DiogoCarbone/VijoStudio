@@ -2,6 +2,7 @@
 
 import 'Styles/main.scss';
 import MicroModal from 'micromodal';
+import emailjs from 'emailjs-com';
 
 const menuBtn = document.querySelector('.menu-btn');
 const navbarLinks = document.querySelector('#navbar-links');
@@ -9,6 +10,7 @@ const navbarLinks = document.querySelector('#navbar-links');
 window.addEventListener('DOMContentLoaded', () => {
 	MicroModal.init();
 	/* MicroModal.show('modal-1'); */
+	emailjs.init("user_Cyzt5zhpOEbvOcpYYLBlc");
 	let menuOpen = false;
 	menuBtn.addEventListener('click', () => {
 		if (!menuOpen) {
@@ -28,24 +30,3 @@ window.addEventListener('DOMContentLoaded', () => {
 	"name": "Rafael",
 	"content": "Testando email "
 } */
-
-document.getElementById('submit').addEventListener('click', () => {
-	MicroModal.show('modal-1');
-	const objetoEnviar = {
-		email: null,
-		name: null,
-		content: null
-	}
-	objetoEnviar.email = document.getElementById('contact-email').value;
-	objetoEnviar.name = document.getElementById('client-name').value;
-
-	fetch(`https://rytemailtest.herokuapp.com/email`, {
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(objetoEnviar)
-	}).then(response => response.json()).then((res) => {
-		console.log(res);
-	})
-})
