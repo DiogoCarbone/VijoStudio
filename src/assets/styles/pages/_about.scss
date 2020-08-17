@@ -1,11 +1,9 @@
 #about {
-		overflow-x: hidden !important;
 	#banner {
 		background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner-sm.png);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
-		position: relative;
 		min-height: 80vh;
 
 		@include breakpoint(md) {

@@ -10,7 +10,6 @@ const navbarLinks = document.querySelector('#navbar-links');
 window.addEventListener('DOMContentLoaded', () => {
 	MicroModal.init();
 	/* MicroModal.show('modal-1'); */
-	emailjs.init("user_Cyzt5zhpOEbvOcpYYLBlc");
 	let menuOpen = false;
 	menuBtn.addEventListener('click', () => {
 		if (!menuOpen) {
@@ -25,8 +24,38 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 })
 
-/* {
-	"email": "rafaelytakei@gmail.com",
-	"name": "Rafael",
-	"content": "Testando email "
-} */
+	document.getElementById('submit').addEventListener('click', () => {
+		const templateParams = {
+			message_html: 'I am working',
+			to_name: 'Dennis',
+			from_name: document.getElementById('client-name').value,
+			client_email: document.getElementById('client-email').value,
+		};
+		
+		emailjs.send('gmail','template_XzxHkYzl', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
+			.then((response) => {
+			   console.log('SUCCESS!', response.status, response.text);
+			}, (err) => {
+			   console.log('FAILED...', err);
+			});
+	})
+
+	
+	document.getElementById('submit-button1').addEventListener('click', () => {
+		const templateParams = {
+			to_name: 'Denis',
+			from_name: document.getElementById('name-input').value,
+			client_email: document.getElementById('email-input').value,
+			message_html: document.getElementById('tellus-input').value,
+			client_number: document.getElementById('phone-input').value,
+			client_address: document.getElementById('address-input').value
+		};
+		
+		emailjs.send('gmail','template_XzxHkYzl', templateParams, 'contact_page_message')
+			.then((response) => {
+			   console.log('SUCCESS!', response.status, response.text);
+			}, (err) => {
+			   console.log('FAILED...', err);
+			});
+	})
+

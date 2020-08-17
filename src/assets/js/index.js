@@ -24,11 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 })
 
-/* {
-	"email": "rafaelytakei@gmail.com",
-	"name": "Rafael",
-	"content": "Testando email "
-} */
 	document.getElementById('submit').addEventListener('click', () => {
 		const templateParams = {
 			message_html: 'I am working',
@@ -44,5 +39,4 @@ window.addEventListener('DOMContentLoaded', () => {
 			   console.log('FAILED...', err);
 			});
 	})
-
 
