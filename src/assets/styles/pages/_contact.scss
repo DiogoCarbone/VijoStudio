@@ -84,10 +84,12 @@
         input {
             max-width: 325px;
             background: transparent;
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid black;
             color: whitesmoke;
             font-family: 'Open Sans';
-
+            &:focus {
+                outline: none;
+            }
         }
                     
         #name-input:hover {
