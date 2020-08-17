@@ -40,4 +40,29 @@ window.addEventListener('DOMContentLoaded', () => {
 			});
 	})
 
+	document.querySelector('#monday').addEventListener('click', () => {
+		MicroModal.show('modal-1');
+	  })
+	  document.querySelector('#melio-loan').addEventListener('click', () => {
+		MicroModal.show('modal-2');
+	  })
+	  document.querySelector('#poalim').addEventListener('click', () => {
+		MicroModal.show('modal-3');
+	  })
+	  document.querySelector('#guardicore').addEventListener('click', () => {
+		MicroModal.show('modal-4');
+	  })
+	  document.querySelector('#gala').addEventListener('click', () => {
+		MicroModal.show('modal-5');
+	  })
+	  document.querySelector('#melio-online').addEventListener('click', () => {
+		MicroModal.show('modal-6');
+	  })
+	  document.querySelector('#monday-conference').addEventListener('click', () => {
+		MicroModal.show('modal-7');
+	  })
+	  document.querySelector('#microsoft-bluehat').addEventListener('click', () => {
+		MicroModal.show('modal-8');
+	  })
+
 

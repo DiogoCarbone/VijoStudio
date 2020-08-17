@@ -17,17 +17,16 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	height: 70vh;
+	min-height: 70vh;
 	position: relative;
 
 	@include breakpoint(md) {
-		height: 80vh;
+		min-height: 80vh;
 	}
 
 	@include breakpoint(lg) {
 		background-size: cover;
 		background-repeat: no-repeat;
-		height: 820px;
 	}
 
 	@include breakpoint(xl) {
@@ -42,148 +41,7 @@ body {
 
 
 
-/* HAMBURGER MENU BUTTON */
 
-.menu-btn {
-	position: absolute;
-	top: 1rem;
-	right: 1rem;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 60px;
-	height: 60px;
-	cursor: pointer;
-	transition: all .5s ease-in-out;
-
-	/* border: 3px solid #fff; */
-	@include breakpoint(lg) {
-		display: none;
-	}
-
-	z-index: 1;
-}
-
-.menu-btn__burger {
-	width: 50px;
-	height: 6px;
-	background: #fff;
-	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-	transition: all .5s ease-in-out;
-}
-
-.menu-btn__burger::before,
-.menu-btn__burger::after {
-	content: '';
-	position: absolute;
-	width: 50px;
-	height: 6px;
-	background: #fff;
-	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
-	transition: all .5s ease-in-out;
-}
-
-.menu-btn__burger::before {
-	transform: translateY(-16px);
-}
-
-.menu-btn__burger::after {
-	transform: translateY(16px);
-}
-
-/* ANIMATION */
-.menu-btn.open .menu-btn__burger {
-	transform: translateX(-50px);
-	background: transparent;
-	box-shadow: none;
-}
-
-.menu-btn.open .menu-btn__burger::before {
-	transform: rotate(45deg) translate(35px, -35px);
-}
-
-.menu-btn.open .menu-btn__burger::after {
-	transform: rotate(-45deg) translate(35px, 35px);
-}
-
-/*END OF HAMBURGER MENU BUTTON */
-
-#navbar {
-	display: flex;
-
-	@include breakpoint(lg) {
-		padding-top: 3em;
-		max-width: 980px;
-		margin: 0 auto;
-	}
-}
-
-.vijo-logo {
-	height: 80px;
-	width: 80px;
-	margin: .5rem auto;
-	position: absolute;
-	top: 1em;
-	left: 1em;
-
-	@include breakpoint(lg) {
-		position: absolute;
-		top: 1em;
-		left: 2em;
-	}
-}
-
-#navbar-links {
-	top: 0;
-	width: 100%;
-	display: none;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: center;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 1em;
-	font-weight: 600;
-	background-color: rgba($color: black, $alpha: 0.5);
-
-	ul {
-		padding: 0.5em 0;
-	}
-
-	ul a {
-		color: white;
-		text-decoration: none;
-	}
-
-	ul a:focus,
-	ul a:hover {
-		color: $yellow;
-	}
-
-	@include breakpoint(lg) {
-		display: flex;
-		flex-direction: row;
-		justify-content: flex-end;
-		align-items: center;
-		background-color: transparent;
-
-		ul {
-			padding: 0.5em 1em;
-		}
-
-		ul a {
-			color: white;
-			text-decoration: none;
-			font-size: 0.9em;
-		}
-
-		ul a:focus,
-		ul a:hover {
-			color: $yellow;
-		}
-	}
-}
 
 #we-create-container {
 	text-transform: uppercase;
@@ -237,6 +95,7 @@ body {
 
 #consultation-button {
 	display: flex;
+	flex-wrap: nowrap;
 	justify-content: center;
 	position: absolute;
 	bottom: 5.5em;

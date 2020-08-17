@@ -12,7 +12,10 @@
 </head>
 
 <body id="contact">
-    <div id="banner">
+    <div class="menu-btn">
+        <div class="menu-btn__burger"></div>
+    </div>
+    <div id="navbar">
         <div class="vijo-logo">
             <svg preserveAspectRatio="xMidYMid meet" id="comp-kbs9co60svgcontent"
                 data-bbox="0.001 -0.005 799.696 767.244" viewBox="0 0 799.69 767.24"
@@ -294,99 +297,77 @@
                 </g>
             </svg>
         </div>
-        <div class="menu-btn">
-            <div class="menu-btn__burger"></div>
-        </div>
-        <div id="navbar">
-            
-            <div id="navbar-links">
-                <div class="li-links">
-                    <ul>
-                        <a href="./index.html" class="nav-link">
-                            Home
-                        </a>
-                    </ul>
-                </div>
-                <div class="li-links">
-                    <ul>
-                        <a href="./what-we-do.html" class="nav-link">
-                            What We Do
-                        </a>
-                    </ul>
-                </div>
-                <div class="li-links">
-                    <ul>
-                        <a href="./about.html" class="nav-link">
-                            About
-                        </a>
-                    </ul>
-                </div>
-                <div class="li-links">
-                    <ul>
-                        <a href="./contact.html" class="nav-link active">
-                            Contact
-                        </a>
-                    </ul>
-                </div>
+        <div id="navbar-links">
+            <div class="li-links">
+                <ul>
+                    <a href="./index.html" class="nav-link">
+                        Home
+                    </a>
+                </ul>
+            </div>
+            <div class="li-links">
+                <ul>
+                    <a href="./what-we-do.html" class="nav-link">
+                        What We Do
+                    </a>
+                </ul>
+            </div>
+            <div class="li-links">
+                <ul>
+                    <a href="./about.html" class="nav-link">
+                        About
+                    </a>
+                </ul>
+            </div>
+            <div class="li-links">
+                <ul>
+                    <a href="./contact.html" class="nav-link active">
+                        Contact
+                    </a>
+                </ul>
             </div>
         </div>
-        <div id="contact-container">
-            <div id="contactus-container">
-                <span id="white-letters">
-                    contact us
-                </span>
-                <span id="yellow-letters">
-                    tell us about yourself
-                </span>
-            </div>
-        </div>
-        <div class="form-container">
-            <div class="pair-container">
-                <div class="input-container">
-                    <span>name *</span>
-                    <input id="name-input" 
-                    type="text" 
-                    class="form-text-input" 
-                    name="name" 
-                    placeholder="">
-                </div>
-                <div class="input-container">
-                    <span>email *</span>
-                    <input id="email-input" 
-                    type="text" 
-                    class="form-text-input" 
-                    name="email" 
-                    placeholder="">
+    </div>
+    <div id="banner">
+        <div id="translate-div">
+            <div id="contact-container">
+                <div id="contactus-container">
+                    <span id="white-letters">
+                        contact us
+                    </span>
+                    <span id="yellow-letters">
+                        tell us about yourself
+                    </span>
                 </div>
             </div>
-            <div class="pair-container">
-                <div class="input-container">
-                    <span>phone</span>
-                    <input id="phone-input" 
-                    type="text" 
-                    class="form-text-input" 
-                    name="phone" 
-                    placeholder="">
+            <div class="form-container">
+                <div class="pair-container">
+                    <div class="input-container">
+                        <span>name *</span>
+                        <input id="name-input" type="text" class="form-text-input" name="name" placeholder="">
+                    </div>
+                    <div class="input-container">
+                        <span>email *</span>
+                        <input id="email-input" type="text" class="form-text-input" name="email" placeholder="">
+                    </div>
+                </div>
+                <div class="pair-container">
+                    <div class="input-container">
+                        <span>phone</span>
+                        <input id="phone-input" type="text" class="form-text-input" name="phone" placeholder="">
+                    </div>
+                    <div class="input-container">
+                        <span>address</span>
+                        <input id="address-input" type="text" class="form-text-input" name="address" placeholder="">
+                    </div>
                 </div>
                 <div class="input-container">
-                    <span>address</span>
-                    <input id="address-input" 
-                    type="text" 
-                    class="form-text-input" 
-                    name="address" 
-                    placeholder="">
+                    <span style="text-transform: none;">Tell us what you need</span>
+                    <input id="tellus-input" type="text" class="form-text-input" name="tellus" placeholder="">
                 </div>
-            </div>
-            <div class="input-container">
-                <span style="text-transform: none;">Tell us what you need</span>
-                <input id="tellus-input" 
-                type="text" 
-                class="form-text-input" 
-                name="tellus" 
-                placeholder="">
-            </div>
-            <div id="submit-button1">
-                <button>Submit</button>
+                <div id="submit-button1">
+                    <button>Submit</button>
+                </div>
             </div>
         </div>
     </div>
@@ -398,21 +379,10 @@
                 </span>
             </div>
             <div id="contact-form-container">
-                <input
-                    type="text"
-                    class="text-input"
-                    name="contactemail"
-                    placeholder="Contact Email*"
-                    id="client-email"
-                />
+                <input type="text" class="text-input" name="contactemail" placeholder="Contact Email*"
+                    id="client-email" />
                 <div id="client-name-container">
-                    <input
-                        type="text"
-                        class="text-input"
-                        name="clientname"
-                        placeholder="Name "
-                        id="client-name"
-                    />
+                    <input type="text" class="text-input" name="clientname" placeholder="Name " id="client-name" />
                     <input type="submit" id="submit" value="Submit" />
                 </div>
             </div>
@@ -421,18 +391,11 @@
                     denis@vijostudio.com
                 </span>
                 <div id="social-media-icons">
-                    <a
-                        href="https://www.youtube.com/channel/UC3YAOS0u-Amzn7lT-0mIvAQ?view_as=subscriber"
-                        id="yt-icon"
-                    ></a>
-                    <a
-                        href="https://www.linkedin.com/checkpoint/challengesV2/AQHTZvAXsbr17wAAAXPeoXllamkgUiNNeNKHxwJ2pnLzwJm2SM20iMbhOEy5AutP2O-fSj-T0C1pcCcMpy7V5vOcbV9h-4TkKQ"
-                        id="in-icon"
-                    ></a>
-                    <a
-                        href="https://www.facebook.com/vijostudio/?view_public_for=102818094592327"
-                        id="fb-icon"
-                    ></a>
+                    <a href="https://www.youtube.com/channel/UC3YAOS0u-Amzn7lT-0mIvAQ?view_as=subscriber"
+                        id="yt-icon"></a>
+                    <a href="https://www.linkedin.com/checkpoint/challengesV2/AQHTZvAXsbr17wAAAXPeoXllamkgUiNNeNKHxwJ2pnLzwJm2SM20iMbhOEy5AutP2O-fSj-T0C1pcCcMpy7V5vOcbV9h-4TkKQ"
+                        id="in-icon"></a>
+                    <a href="https://www.facebook.com/vijostudio/?view_public_for=102818094592327" id="fb-icon"></a>
                     <a href="https://www.instagram.com/denis_sench/" id="ig-icon"></a>
                 </div>
                 <div id="trademark">

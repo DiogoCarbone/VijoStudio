@@ -1,20 +1,19 @@
 
 #contact { 
 
-    #navbar {
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
-
     #banner { 
         background-image: url(../../images/contact-banner.png);
         background-size: cover;
-        height: 80vh;
+        min-height: 70vh;
         
         @include breakpoint (xl) {
-            height: 70vh;
+            min-height: 70vh;
         }
+    }
+
+    #translate-div {
+        max-width: 740px;
+        margin: 8em 10% 2em 10%;
     }
 
     #contactus-container {
@@ -23,8 +22,9 @@
         font-family: 'Open Sans';
         text-transform: uppercase;
         position: relative;
-        margin-top: 8em;
-        padding-left: 10%;
+        
+        
+        
         #white-letters {
             font-size: 2em;
             color: whitesmoke;
@@ -61,11 +61,7 @@
         background: transparent;
         font-family: 'Open Sans';
         text-transform: uppercase;
-        justify-content: center;
-        margin-top: 2em;
-        margin-left: 10%;
-        min-width: 300px;
-        max-width: 740px;
+        justify-content: space-between;
         span {
             color: whitesmoke;
         }
@@ -81,8 +77,8 @@
         flex-direction: column;
         margin-top: 1em;
         margin-right: 2em;
+        flex: 1;
         input {
-            max-width: 325px;
             background: transparent;
             border-bottom: 2px solid black;
             color: whitesmoke;
@@ -127,18 +123,17 @@
 			background-color: transparent;
 			font-size: 1em;
 			color: white;
-            padding: 0.5em;
-            min-width: 300px;
+            width: 100%;
             max-width: 740px;
+            padding: 0.5em 0;
+            margin-right: 2em;
 	
 			@include breakpoint(md) {
 				font-size: 1em;
-				padding: 0.5em 8em;
 			}
 	
 			@include breakpoint(lg) {
 				font-size: 1.1em;
-				padding: 0.5em 6em;
             }
             &:hover {
                 background-color: whitesmoke;
