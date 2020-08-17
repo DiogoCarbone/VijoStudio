@@ -48,10 +48,10 @@ window.addEventListener('DOMContentLoaded', () => {
 			client_email: document.getElementById('email-input').value,
 			message_html: document.getElementById('tellus-input').value,
 			client_number: document.getElementById('phone-input').value,
-			client_address: document.getElementById('address-input').value
+			client_address: document.getElementById('address-input').value,
 		};
 		
-		emailjs.send('gmail','template_XzxHkYzl', templateParams, 'contact_page_message')
+		emailjs.send('gmail','contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
 			.then((response) => {
 			   console.log('SUCCESS!', response.status, response.text);
 			}, (err) => {

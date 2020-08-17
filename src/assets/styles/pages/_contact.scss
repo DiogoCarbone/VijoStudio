@@ -4,11 +4,17 @@
     #navbar {
         position: absolute;
         top: 0;
+        width: 100%;
     }
 
     #banner { 
         background-image: url(../../images/contact-banner.png);
         background-size: cover;
+        height: 80vh;
+        
+        @include breakpoint (xl) {
+            height: 70vh;
+        }
     }
 
     #contactus-container {
@@ -16,6 +22,9 @@
         flex-direction: column;
         font-family: 'Open Sans';
         text-transform: uppercase;
+        position: relative;
+        margin-top: 8em;
+        padding-left: 10%;
         #white-letters {
             font-size: 2em;
             color: whitesmoke;
@@ -27,7 +36,7 @@
             }
     
             @include breakpoint(lg) {
-                font-size: 8em;
+                font-size: 6em;
             }
         }
     
@@ -41,7 +50,7 @@
             }
     
             @include breakpoint(lg) {
-                font-size: 3.3em;
+                font-size: 3em;
             }
         }
     }
@@ -52,7 +61,11 @@
         background: transparent;
         font-family: 'Open Sans';
         text-transform: uppercase;
-        margin-top: 10em;
+        justify-content: center;
+        margin-top: 2em;
+        margin-left: 10%;
+        min-width: 300px;
+        max-width: 740px;
         span {
             color: whitesmoke;
         }
@@ -67,10 +80,11 @@
         display: flex;
         flex-direction: column;
         margin-top: 1em;
+        margin-right: 2em;
         input {
             max-width: 325px;
             background: transparent;
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid white;
             color: whitesmoke;
             font-family: 'Open Sans';
 
@@ -111,7 +125,9 @@
 			background-color: transparent;
 			font-size: 1em;
 			color: white;
-			padding: 0.5em;
+            padding: 0.5em;
+            min-width: 300px;
+            max-width: 740px;
 	
 			@include breakpoint(md) {
 				font-size: 1em;
