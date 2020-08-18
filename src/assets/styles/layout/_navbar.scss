@@ -21,7 +21,7 @@
 }
 
 .menu-btn__burger {
-	width: 24px;
+	width: 30px;
 	height: 3px;
 	background: #fff;
 	border-radius: 3px;
@@ -32,7 +32,7 @@
 .menu-btn__burger::after {
 	content: '';
 	position: absolute;
-	width: 24px;
+	width: 30px;
 	height: 3px;
 	background: #fff;
 	border-radius: 3px;
@@ -102,7 +102,7 @@
 	justify-content: space-between;
 	align-items: center;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 1em;
+	font-size: 1.1em;
 	font-weight: 600;
 	background-color: rgba($color: black, $alpha: 1);
 
