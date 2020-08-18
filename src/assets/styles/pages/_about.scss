@@ -4,14 +4,14 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: center;
-		min-height: 80vh;
+		min-height: 100vh;
 
 		@include breakpoint(md) {
 			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner-sm.png);
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: top;
-			min-height: 90vh;
+			min-height: 100vh;
 		}
 
 		@include breakpoint(lg) {
@@ -70,6 +70,7 @@
 		margin-left: 0;
 		padding-left: 1em;
 		width: 97%;
+		top: 5em;
 
 		@include breakpoint (md) {
 			margin-left: 0;
