@@ -58,13 +58,41 @@ $pink: #BC3E6D;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
-		img {
-			flex: 1 1 150px; /*  Stretching: */
-			margin: 5px;
-		}
-		div {
+
+		.vijo-partners-pair-container {
 			display: flex;
-			align-content: center;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+
+			div {
+				&:last-child {
+					margin-left: 1.5em;
+				}
+			}
+
+			&:first-child {
+				margin: 0 0.5em;
+			}
+
+			&:last-child {
+				margin: 0.5em 0.5em;
+			}
+
+			img {
+				max-height: 50px;
+				width: auto;
+				max-width: 100%;
+			}
+
+			#uniper {
+				display: flex;
+				align-items: center;
+
+				img {
+					max-height: 30px;
+				}
+			}
 		}
 	}
 
