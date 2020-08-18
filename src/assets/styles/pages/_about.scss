@@ -11,13 +11,14 @@
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position: top;
+			min-height: 90vh;
 		}
 
 		@include breakpoint(lg) {
 			background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../../images/about-banner-lg.png);
 			background-size: cover;
 			background-repeat: no-repeat;
-			height: 100vh;
+			min-height: 110vh;
 			max-width: 100%;
 		}
 
@@ -30,6 +31,29 @@
 		}
 
 		width: 100%;
+
+		#white-letters {
+			font-size: 3.2em;
+
+			@include breakpoint (sm) {
+				font-size: 4em;
+			}
+
+			@include breakpoint (md) {
+				font-size: 7em;
+			}
+		}
+
+		#yellow-letters {
+			font-size: 1.3em;
+
+			@include breakpoint (sm) {
+				font-size: 1.65em;
+			}
+			@include breakpoint (md) {
+				font-size: 2.95em;
+			}
+		}
 	}
 
 	#about-container {
@@ -47,82 +71,82 @@
 		padding-left: 1em;
 		width: 97%;
 
-		@include breakpoint (md){
+		@include breakpoint (md) {
 			margin-left: 0;
-			#white-letters {
-				font-size: 4em;
-			}
 		}
 
 		@include breakpoint (lg) {
 			margin-top: 5em;
 			max-width: 800px;
-			#white-letters {
-				font-size: 5em;
+		}
+
+		#text-container {
+			padding-right: 0.5em;
+			margin-top: 2em;
+			text-transform: none;
+			max-width: 90%;
+			padding-bottom: 2em;
+
+			@include breakpoint(lg) {
+				font-size: 1.25em;
+				max-width: 75%;
+			}
+
+			#about-text {
+				font-family: 'Open Sans', sans-serif;
+				font-size: 0.9em;
+				color: white;
+				letter-spacing: 0.04em;
+				line-height: 1.5em;
+				font-weight: 400;
+
+				@include breakpoint (md) {
+					font-size: 1em;
+				}
 			}
 		}
-	}
 
-	#text-container {
-		padding-right: 0.5em;
-		margin-top: 2em;
-		text-transform: none;
-		max-width: 90%;
-		@include breakpoint(lg){
-			font-size: 1.25em;
-			max-width: 75%;
-		}
-		#about-text {
-			font-size: 1em;
-			font-weight: 400;
-		}
-	}
+		#consultation-button1 {
+			display: flex;
+			justify-content: flex-start;
+			bottom: 5.5em;
+			margin-top: 3em;
 
-	#consultation-button1 {
-		display: flex;
-		justify-content: flex-start;
-		bottom: 5.5em;
-		margin-top: 3em;
-		@include breakpoint(md) {
-			bottom: 7em;
+			@include breakpoint(md) {
+				bottom: 7em;
+			}
+
+			@include breakpoint(lg) {
+				bottom: 6em;
+			}
+
+			button {
+				border: 2px solid White;
+				color: black;
+				font-family: 'Open Sans', sans-serif;
+				background-color: transparent;
+				font-size: 1em;
+				color: white;
+				padding: 0.5em 3em;
+
+				@include breakpoint(md) {
+					font-size: 1em;
+					padding: 0.5em 8em;
+				}
+
+				@include breakpoint(lg) {
+					font-size: 1.1em;
+					padding: 0.5em 6em;
+				}
+			}
 		}
-	
-		@include breakpoint(lg) {
-			bottom: 6em;
-		}
-	
-		button {
-			border: 2px solid White;
+
+		#consultation-button1 button:hover {
+			background-color: whitesmoke;
 			color: black;
 			font-family: 'Open Sans', sans-serif;
-			background-color: transparent;
-			font-size: 1em;
-			color: white;
-			padding: 0.5em;
-	
-			@include breakpoint(md) {
-				font-size: 1em;
-				padding: 0.5em 8em;
-			}
-	
-			@include breakpoint(lg) {
-				font-size: 1.1em;
-				padding: 0.5em 6em;
-			}
+			transition: 500ms;
+			cursor: pointer;
 		}
-	}
-	
-	#consultation-button1 button:hover {
-		background-color: whitesmoke;
-		color: black;
-		font-family: 'Open Sans', sans-serif;
-		transition: 500ms;
-		cursor: pointer;
-	}
-
-	#about-text {
-		font-family: 'Open Sans', sans-serif;
-		font-size: 1.5em;
-		color: white;
 	}
 }

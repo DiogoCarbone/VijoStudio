@@ -64,5 +64,11 @@ window.addEventListener('DOMContentLoaded', () => {
 	  document.querySelector('#microsoft-bluehat').addEventListener('click', () => {
 		MicroModal.show('modal-8');
 	  })
+	  document.querySelector('#top10apply').addEventListener('click', () => {
+		MicroModal.show('modal-9');
+	  })
+	  document.querySelector('#sisense').addEventListener('click', () => {
+		MicroModal.show('modal-10');
+	  })
 
 
