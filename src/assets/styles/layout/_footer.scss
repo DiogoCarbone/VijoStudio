@@ -204,6 +204,13 @@
 		display: inline-block;
 	}
 
+	#contact-image {
+		img {
+			max-width: 100%;
+
+		}
+	}
+
 	.d-none {
 		display: none;
 	}
