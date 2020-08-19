@@ -41,7 +41,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	})
 
 	
-	document.getElementById('submit-button1').addEventListener('click', () => {
+	document.getElementById('submit').addEventListener('click', () => {
 		const templateParams = {
 			to_name: 'Denis',
 			from_name: document.getElementById('name-input').value,

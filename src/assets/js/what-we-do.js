@@ -9,7 +9,6 @@ const navbarLinks = document.querySelector('#navbar-links');
 
 window.addEventListener('DOMContentLoaded', () => {
 	MicroModal.init();
-	/* MicroModal.show('modal-1'); */
 	let menuOpen = false;
 	menuBtn.addEventListener('click', () => {
 		if (!menuOpen) {

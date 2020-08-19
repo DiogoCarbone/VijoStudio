@@ -1,27 +1,29 @@
-
-	footer {
-		background-color: black;
-		height: auto;
-	}
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: black;
+	height: auto;
 
 	#footer-container {
 		display: flex;
 		flex-direction: column;
-		padding-top: 1em;
+		padding: 1em 0em;
 		max-width: 90%;
 	}
 
 	#footer-title-container {
 		margin-left: 0;
 		display: flex;
-			span {
-				color: $yellow;
-				font-family: 'Open Sans', sans-serif;
-				font-size: 1.5em;
-				font-weight: 600;
-			}
+
+		span {
+			color: $yellow;
+			font-family: 'Open Sans', sans-serif;
+			font-size: 1.5em;
+			font-weight: 600;
 		}
-	
+	}
+
 	#contact-form-container {
 		margin-top: 1em;
 		display: flex;
@@ -29,6 +31,7 @@
 		flex-wrap: wrap;
 		align-items: flex-end;
 		justify-content: center;
+
 		span {
 			color: whitesmoke;
 			font-family: 'Open Sans', sans-serif;
@@ -44,6 +47,7 @@
 		min-width: 250px;
 		width: 90%;
 		max-width: 780px;
+
 		input {
 			background-color: transparent;
 			border-top-style: solid;
@@ -65,7 +69,8 @@
 		#submit {
 			color: whitesmoke;
 			font-family: 'Open Sans', sans-serif;
-			padding:  auto 0.5em;
+			padding: auto 0.5em;
+
 			&:hover {
 				color: black;
 				background-color: white;
@@ -119,10 +124,11 @@
 	#contact-image {
 		img {
 			max-width: 100%;
-
+			margin-bottom: 2em;
 		}
 	}
 
 	.d-none {
 		display: none;
 	}
+}
