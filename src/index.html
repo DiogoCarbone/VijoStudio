@@ -339,9 +339,7 @@
 			</span>
 		</div>
 		<div id="consultation-button">
-			<a href='./contact.html'>
-				<button>Request Free Consultation</button>
-			</a>
+			<button>Request a quote</button>
 		</div>
 	</div>
 	<div id="vijo-partners-div">
@@ -629,11 +627,30 @@
 				</span>
 			</div>
 			<div id="contact-form-container">
-				<input type="text" class="text-input" name="contactemail" placeholder="Contact Email*"
-					id="client-email" />
-				<div id="client-name-container">
-					<input type="text" class="text-input" name="clientname" placeholder="Name " id="client-name" />
-					<input type="submit" id="submit" value="Submit" />
+				<div class="input-container">
+					<span>Name*</span>
+					<input 
+						type="text" 
+						class="text-input" 
+						name="clientname" 
+						placeholder="" 
+						id="client-name" />
+				</div>
+				<div class="input-container">
+					<span>Email*</span>
+					<input 
+						type="text" 
+						class="text-input" 
+						name="contactemail" 
+						placeholder=""
+						id="client-email"/>
+				</div>
+				<div class="input-container">
+					<input 
+						type="submit" 
+						id="submit" 
+						value="Submit" />
+				</div>
 				</div>
 			</div>
 			<div id="social-media-info">
@@ -651,6 +668,7 @@
 			</div>
 		</div>
 	</footer>
+
 	<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
 		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
 			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
@@ -676,6 +694,53 @@
 			</div>
 		</div>
 	</div>
+	<div class="modal micromodal-slide" id="request-quote" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+		  <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+			<header class="modal__header">
+			  <h2 class="modal__title" id="modal-1-title">
+				request a quote
+			  </h2>
+			  <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+			</header>
+			<main class="modal__content" id="modal-1-content">
+				<div class="input-container" id="company-name">
+					<span>Company *</span>
+					<input id="phone-input" type="text" class="form-text-input" name="phone" placeholder="">
+				</div>
+				<div class="input-container" id="contact-name">
+					<span>Contact Name *</span>
+					<input id="phone-input" type="text" class="form-text-input" name="phone" placeholder="">
+				</div>
+				<div class="input-container" id="phone-number">
+					<span>Phone *</span>
+					<input id="phone-input" type="text" class="form-text-input" name="phone" placeholder="">
+				</div>
+				<div class="input-container" id="email-address">
+					<span>Email *</span>
+					<input id="phone-input" type="text" class="form-text-input" name="phone" placeholder="">
+				</div>
+				<div class="input-container" id="budget-range">
+					<span>Budget Range *</span>
+					<select id = "myList">
+					  <option value = "1">$1500 - $3000</option>
+					  <option value = "2">$3000 - $6000</option>
+					  <option value = "3">$6000 - $10000</option>
+					  <option value = "4">$10000 and up</option>
+					  <option value = "4">Not sure</option>
+					</select>
+				</div>
+				<div class="input-container" id="phone-number">
+					<span>Additional information *</span>
+					<input id="phone-input" type="text" class="form-text-input" name="phone" placeholder="">
+				</div>
+			</main>
+			<footer class="modal__footer">
+			  <button class="modal__btn modal__btn-primary">Submit</button>
+			</footer>
+		  </div>
+		</div>
+	  </div>
 </body>
 
 </html>

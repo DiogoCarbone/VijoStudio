@@ -12,15 +12,15 @@
     }
 
     #translate-div {
-        max-width: 740px;
-        margin: 8em 10% 2em 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
         @include breakpoint(lg) {
             margin-top: 10em;
-            margin-left: 15%;
         }
         @include breakpoint(xl) {
-            margin-left: 20%;
         }
     }
 
@@ -68,85 +68,30 @@
         flex-direction: column;
         background: transparent;
         font-family: 'Open Sans';
-        text-transform: uppercase;
-        justify-content: space-between;
+        align-items: center;
+        margin-top: 1em;
         span {
+            margin-bottom: 0.5em;
             color: whitesmoke;
         }
     }
 
-    .pair-container {
+    #trio-container {
         display: flex;
         flex-wrap: wrap;
+        flex-grow: 1;
     }
 
-    .input-container {
+    #pair-container {
         display: flex;
         flex-direction: column;
-        margin-top: 1em;
-        margin-right: 2em;
-        flex: 1;
-        input {
-            background: transparent;
-            border-bottom: 2px solid black;
-            color: whitesmoke;
-            font-family: 'Open Sans';
-            &:focus {
-                outline: none;
-            }
+        width: 100%;
+        .input-container {
+            width: auto;
         }
-                    
-        #name-input:hover {
-            border-bottom: 2px solid #05C8A1;
-        }
-        #email-input:hover {
-            border-bottom: 2px solid #FFD45A;
-        }
-        #phone-input:hover {
-            border-bottom: 2px solid #B45AD4;
-        }
-        #address-input:hover {
-            border-bottom: 2px solid #1A2DF3;
-        }
-        #tellus-input:hover {
-            border-bottom: 2px solid #FF5CEF;
-        }
-    } 
+    }
 
-    
-	#submit-button1 {
-		display: flex;
-		justify-content: flex-start;
-		bottom: 5.5em;
-        margin-top: 2em;
-        justify-self: center;
-	
-		button {
-			border: 2px solid White;
-			color: black;
-			font-family: 'Open Sans', sans-serif;
-			background-color: transparent;
-			font-size: 1em;
-			color: white;
-            width: 100%;
-            max-width: 740px;
-            padding: 0.5em 0;
-            margin-right: 2em;
-	
-			@include breakpoint(md) {
-				font-size: 1em;
-			}
-	
-			@include breakpoint(lg) {
-				font-size: 1.1em;
-            }
-            &:hover {
-                background-color: whitesmoke;
-                color: black;
-                font-family: 'Open Sans', sans-serif;
-                transition: 500ms;
-                cursor: pointer;
-            }
-        }
+    #phone-number {
+        padding-top: 0.5em !important;
     }
 }

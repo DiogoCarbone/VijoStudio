@@ -41,34 +41,34 @@ window.addEventListener('DOMContentLoaded', () => {
 	})
 
 	document.querySelector('#monday').addEventListener('click', () => {
-		MicroModal.show('modal-1');
+		MicroModal.show('monday-video');
 	  })
 	  document.querySelector('#melio-loan').addEventListener('click', () => {
-		MicroModal.show('modal-2');
+		MicroModal.show('melio-loan-video');
 	  })
 	  document.querySelector('#poalim').addEventListener('click', () => {
-		MicroModal.show('modal-3');
+		MicroModal.show('poalim-video');
 	  })
 	  document.querySelector('#guardicore').addEventListener('click', () => {
-		MicroModal.show('modal-4');
+		MicroModal.show('guardicore-video');
 	  })
-	  document.querySelector('#gala').addEventListener('click', () => {
-		MicroModal.show('modal-5');
-	  })
+/* 	  document.querySelector('#gala').addEventListener('click', () => {
+		MicroModal.show('#gala-video');
+	  }) */
 	  document.querySelector('#melio-online').addEventListener('click', () => {
-		MicroModal.show('modal-6');
+		MicroModal.show('melio-online-video');
 	  })
 	  document.querySelector('#monday-conference').addEventListener('click', () => {
-		MicroModal.show('modal-7');
+		MicroModal.show('monday-conference-video');
 	  })
 	  document.querySelector('#microsoft-bluehat').addEventListener('click', () => {
-		MicroModal.show('modal-8');
+		MicroModal.show('microsoft-bluehat-video');
 	  })
 	  document.querySelector('#top10apply').addEventListener('click', () => {
-		MicroModal.show('modal-9');
+		MicroModal.show('top10apply-video');
 	  })
 	  document.querySelector('#sisense').addEventListener('click', () => {
-		MicroModal.show('modal-10');
+		MicroModal.show('sisense-video');
 	  })
 
 

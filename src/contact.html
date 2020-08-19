@@ -330,7 +330,6 @@
     </div>
     <div id="banner">
         <div id="translate-div">
-            <div id="contact-container">
                 <div id="contactus-container">
                     <span id="white-letters">
                         contact us
@@ -339,34 +338,29 @@
                         tell us about yourself
                     </span>
                 </div>
-            </div>
             <div class="form-container">
-                <div class="pair-container">
+                <div id="trio-container">
                     <div class="input-container">
-                        <span>name *</span>
+                        <span>Name *</span>
                         <input id="name-input" type="text" class="form-text-input" name="name" placeholder="">
                     </div>
                     <div class="input-container">
-                        <span>email *</span>
+                        <span>Email *</span>
                         <input id="email-input" type="text" class="form-text-input" name="email" placeholder="">
                     </div>
-                </div>
-                <div class="pair-container">
-                    <div class="input-container">
-                        <span>phone</span>
+                    <div class="input-container" id="phone-number">
+                        <span>Phone</span>
                         <input id="phone-input" type="text" class="form-text-input" name="phone" placeholder="">
                     </div>
+                </div>
+                <div id="pair-container">
                     <div class="input-container">
-                        <span>address</span>
-                        <input id="address-input" type="text" class="form-text-input" name="address" placeholder="">
+                        <span style="text-transform: none;">Your Story</span>
+                        <input id="tellus-input" type="text" class="form-text-input" name="tellus" placeholder="">
                     </div>
-                </div>
-                <div class="input-container">
-                    <span style="text-transform: none;">Tell us what you need</span>
-                    <input id="tellus-input" type="text" class="form-text-input" name="tellus" placeholder="">
-                </div>
-                <div id="submit-button1">
-                    <button>Submit</button>
+                    <div class="input-container">
+                        <input type="submit" id="submit" value="Submit" />
+                    </div>
                 </div>
             </div>
         </div>
@@ -379,29 +373,31 @@
                 </span>
             </div>
             <div id="contact-form-container">
-                <input type="text" class="text-input" name="contactemail" placeholder="Contact Email*"
-                    id="client-email" />
-                <div id="client-name-container">
-                    <input type="text" class="text-input" name="clientname" placeholder="Name " id="client-name" />
+                <div class="input-container">
+                    <span>Name*</span>
+                    <input type="text" class="text-input" name="clientname" placeholder="" id="client-name" />
+                </div>
+                <div class="input-container">
+                    <span>Email*</span>
+                    <input type="text" class="text-input" name="contactemail" placeholder="" id="client-email" />
+                </div>
+                <div class="input-container">
                     <input type="submit" id="submit" value="Submit" />
                 </div>
             </div>
-            <div id="social-media-info">
-                <span id="personal-email">
-                    denis@vijostudio.com
-                </span>
-                <div id="social-media-icons">
-                    <a href="https://www.youtube.com/channel/UC3YAOS0u-Amzn7lT-0mIvAQ?view_as=subscriber"
-                        id="yt-icon"></a>
-                    <a href="https://www.linkedin.com/checkpoint/challengesV2/AQHTZvAXsbr17wAAAXPeoXllamkgUiNNeNKHxwJ2pnLzwJm2SM20iMbhOEy5AutP2O-fSj-T0C1pcCcMpy7V5vOcbV9h-4TkKQ"
-                        id="in-icon"></a>
-                    <a href="https://www.facebook.com/vijostudio/?view_public_for=102818094592327" id="fb-icon"></a>
-                    <a href="https://www.instagram.com/denis_sench/" id="ig-icon"></a>
-                </div>
-                <div id="trademark">
-                    <span>© vijo 2020</span>
-                </div>
+        </div>
+        <div id="social-media-info">
+            <div id="social-media-icons">
+                <a href="https://www.youtube.com/channel/UC3YAOS0u-Amzn7lT-0mIvAQ?view_as=subscriber" id="yt-icon"></a>
+                <a href="https://www.linkedin.com/checkpoint/challengesV2/AQHTZvAXsbr17wAAAXPeoXllamkgUiNNeNKHxwJ2pnLzwJm2SM20iMbhOEy5AutP2O-fSj-T0C1pcCcMpy7V5vOcbV9h-4TkKQ"
+                    id="in-icon"></a>
+                <a href="https://www.facebook.com/vijostudio/?view_public_for=102818094592327" id="fb-icon"></a>
+                <a href="https://www.instagram.com/denis_sench/" id="ig-icon"></a>
             </div>
+            <div id="contact-image">
+                <img src="../src/assets/images/footer-img.png">
+            </div>
+        </div>
         </div>
     </footer>
 </body>

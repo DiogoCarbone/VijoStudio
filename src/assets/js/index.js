@@ -40,3 +40,6 @@ window.addEventListener('DOMContentLoaded', () => {
 			});
 	})
 
+	document.querySelector('#consultation-button').addEventListener('click', () => {
+		MicroModal.show('request-quote');
+	  })
