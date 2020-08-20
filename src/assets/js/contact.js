@@ -7,6 +7,7 @@ import emailjs from 'emailjs-com';
 const menuBtn = document.querySelector('.menu-btn');
 const navbarLinks = document.querySelector('#navbar-links');
 
+
 window.addEventListener('DOMContentLoaded', () => {
 	MicroModal.init();
 	/* MicroModal.show('modal-1'); */
@@ -23,39 +24,27 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 })
-
-	document.getElementById('submit').addEventListener('click', () => {
-		const templateParams = {
-			message_html: 'I am working',
-			to_name: 'Dennis',
-			from_name: document.getElementById('client-name').value,
-			client_email: document.getElementById('client-email').value,
-		};
-		
-		emailjs.send('gmail','template_XzxHkYzl', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
-			.then((response) => {
-			   console.log('SUCCESS!', response.status, response.text);
-			}, (err) => {
-			   console.log('FAILED...', err);
-			});
-	})
-
 	
 	document.getElementById('submit').addEventListener('click', () => {
+		
 		const templateParams = {
-			to_name: 'Denis',
+			to_name: 'Dennis',
 			from_name: document.getElementById('name-input').value,
 			client_email: document.getElementById('email-input').value,
+			client_phone: document.getElementById('phone-input') == "" ? document.getElementById('phone-input').value : 'Not Provided',
+			company_name: 'Not Provided',
+			budget_range: 'Not Provided',
 			message_html: document.getElementById('tellus-input').value,
-			client_number: document.getElementById('phone-input').value,
-			client_address: document.getElementById('address-input').value,
 		};
+		document.getElementById('submit').innerHTML = 'Sending';
 		
 		emailjs.send('gmail','contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
 			.then((response) => {
 			   console.log('SUCCESS!', response.status, response.text);
+			   document.getElementById('submit').innerHTML = 'Email Sent';
 			}, (err) => {
 			   console.log('FAILED...', err);
+			   document.getElementById('submit').innerHTML = 'Please Try Again';
 			});
 	})
 

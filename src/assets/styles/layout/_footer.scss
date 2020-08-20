@@ -69,11 +69,21 @@ footer {
 		#submit {
 			color: whitesmoke;
 			font-family: 'Open Sans', sans-serif;
-			padding: auto 0.5em;
-
+			padding: 1em 0.5em;
+			background-color: rgba($color: black, $alpha: 0.6);
+			border: 1px solid white;
+			border-radius: 5px;
+			font-weight: 600;
+			cursor: pointer;
 			&:hover {
+				transition: 0.5s;
+				background-color: whitesmoke;
 				color: black;
-				background-color: white;
+				border: 2px solid black;
+			}
+		
+			&:focus {
+				border-color: whitesmoke;
 			}
 		}
 	}

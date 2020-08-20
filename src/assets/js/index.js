@@ -24,22 +24,47 @@ window.addEventListener('DOMContentLoaded', () => {
 	});
 })
 
-	document.getElementById('submit').addEventListener('click', () => {
-		const templateParams = {
-			message_html: 'I am working',
-			to_name: 'Dennis',
-			from_name: document.getElementById('client-name').value,
-			client_email: document.getElementById('client-email').value,
-		};
-		
-		emailjs.send('gmail','template_XzxHkYzl', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
-			.then((response) => {
-			   console.log('SUCCESS!', response.status, response.text);
-			}, (err) => {
-			   console.log('FAILED...', err);
-			});
-	})
-
 	document.querySelector('#request-quote-btn').addEventListener('click', () => {
 		MicroModal.show('request-quote');
 	  })
+
+	  document.getElementById('submit').addEventListener('click', () => {
+		const templateParams = {
+			to_name: 'Dennis',
+			from_name: document.getElementById('client-name').value,
+			client_email: document.getElementById('client-email').value,
+		}
+		document.getElementById('submit').innerHTML = 'Sending';
+		
+		emailjs.send('gmail','contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
+			.then((response) => {
+			   console.log('SUCCESS!', response.status, response.text);
+			   document.getElementById('submit').innerHTML = 'Email Sent';
+			}, (err) => {
+			   console.log('FAILED...', err);
+			   document.getElementById('submit').innerHTML = 'Please Try Again';
+			});
+	})
+
+	document.getElementById('modal-submit').addEventListener('click', () => {
+		const templateParams = {
+			to_name: 'Dennis',
+			from_name: document.getElementById('modal-client-name').value,
+			client_email: document.getElementById('email-address').value,
+			client_phone: document.getElementById('phone-input').value,
+			company_name: document.getElementById('company-name').value,
+			budget_range: document.getElementById('myList').value,
+			message_html: document.getElementById('tellus-input').value,
+		};
+
+		document.getElementById('modal-submit').innerHTML = 'Sending';
+		
+		emailjs.send('gmail','contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
+			.then((response) => {
+			   console.log('SUCCESS!', response.status, response.text);
+			   document.getElementById('modal-submit').innerHTML = 'Email Sent';
+			}, (err) => {
+			   console.log('FAILED...', err);
+			   document.getElementById('modal-submit').innerHTML = 'Please Try Again';
+			});
+	})

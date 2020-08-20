@@ -12,6 +12,7 @@
 </head>
 
 <body id="about">
+	<button class="float-btn" id="request-quote-btn">Request Quote</button>
 	<div id="navbar">
 		<div class="vijo-logo">
 			<svg preserveAspectRatio="xMidYMid meet" id="comp-kbs9co60svgcontent"
@@ -326,9 +327,9 @@
 					</a>
 				</ul>
 			</div>
-			<div class="li-links">
+<!-- 			<div class="li-links">
 				<button id="request-quote-btn">Request Quote</button>
-			</div>
+			</div> -->
 		</div>
 	</div>
     <div id="banner">
@@ -367,46 +368,32 @@
 			<div id="contact-form-container">
 				<div class="input-container">
 					<span>Name*</span>
-					<input 
-						type="text" 
-						class="text-input" 
-						name="clientname" 
-						placeholder="" 
-						id="client-name" />
+					<input type="text" class="text-input" name="clientname" placeholder="" id="client-name" />
 				</div>
 				<div class="input-container">
 					<span>Email*</span>
-					<input 
-						type="text" 
-						class="text-input" 
-						name="contactemail" 
-						placeholder=""
-						id="client-email"/>
+					<input type="text" class="text-input" name="contactemail" placeholder="" id="client-email" />
 				</div>
 				<div class="input-container">
-					<input 
-						type="submit" 
-						id="submit" 
-						value="Submit" />
-				</div>
-				</div>
-			</div>
-			<div id="social-media-info">
-				<div id="social-media-icons">
-					<a href="https://www.youtube.com/channel/UC3YAOS0u-Amzn7lT-0mIvAQ?view_as=subscriber"
-						id="yt-icon"></a>
-					<a href="https://www.linkedin.com/checkpoint/challengesV2/AQHTZvAXsbr17wAAAXPeoXllamkgUiNNeNKHxwJ2pnLzwJm2SM20iMbhOEy5AutP2O-fSj-T0C1pcCcMpy7V5vOcbV9h-4TkKQ"
-						id="in-icon"></a>
-					<a href="https://www.facebook.com/vijostudio/?view_public_for=102818094592327" id="fb-icon"></a>
-					<a href="https://www.instagram.com/denis_sench/" id="ig-icon"></a>
-				</div>
-				<div id="contact-image">
-					<img src="../src/assets/images/footer-img.png">
+					<button id="submit">Submit</button>
 				</div>
 			</div>
 		</div>
-    </footer>
-    <div class="modal micromodal-slide" id="request-quote" aria-hidden="true">
+		<div id="social-media-info">
+			<div id="social-media-icons">
+				<a href="https://www.youtube.com/channel/UC3YAOS0u-Amzn7lT-0mIvAQ?view_as=subscriber" id="yt-icon"></a>
+				<a href="https://www.linkedin.com/checkpoint/challengesV2/AQHTZvAXsbr17wAAAXPeoXllamkgUiNNeNKHxwJ2pnLzwJm2SM20iMbhOEy5AutP2O-fSj-T0C1pcCcMpy7V5vOcbV9h-4TkKQ"
+					id="in-icon"></a>
+				<a href="https://www.facebook.com/vijostudio/?view_public_for=102818094592327" id="fb-icon"></a>
+				<a href="https://www.instagram.com/denis_sench/" id="ig-icon"></a>
+			</div>
+			<div id="contact-image">
+				<img src="../src/assets/images/footer-img.png">
+			</div>
+		</div>
+		</div>
+	</footer>
+	<div class="modal micromodal-slide" id="request-quote" aria-hidden="true">
 		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
 			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
 				<header class="modal__header">
@@ -419,16 +406,16 @@
 					<div class="input-container" id="contact-name">
 						<span>Contact Name *</span>
 						<input 
-						id="phone-input" 
+						id="modal-client-name" 
 						type="text" 
 						class="form-text-input" 
-						name="contact-name" 
+						name="client-name" 
 						placeholder="">
 					</div>
 					<div class="input-container" id="email-address">
 						<span>Email *</span>
 						<input 
-						id="phone-input" 
+						id="email-address" 
 						type="text" 
 						class="form-text-input" 
 						name="email-address" 
@@ -446,13 +433,13 @@
 					<div class="input-container" id="company-name">
 						<span>Company *</span>
 						<input 
-						id="phone-input" 
+						id="company-name" 
 						type="text" 
 						class="form-text-input" 
 						name="company-name" 
 						placeholder="">
 					</div>
-					<div class="input-container" id="phone-number">
+					<div class="input-container" id="project-description">
 						<span>Short project description *</span>
 						<textarea 
 						id="tellus-input" 
@@ -466,17 +453,17 @@
 					<div class="input-container" id="budget-range">
 						<span>Budget Range *</span>
 						<select id="myList">
-							<option value="1">$1500 - $3000</option>
-							<option value="2">$3000 - $6000</option>
-							<option value="3">$6000 - $10000</option>
-							<option value="4">$10000 and up</option>
-							<option value="4">Not sure</option>
+							<option value="$1500 - $3000">$1500 - $3000</option>
+							<option value="$3000 - $6000">$3000 - $6000</option>
+							<option value="$6000 - $10000">$6000 - $10000</option>
+							<option value="$10000 and up">$10000 and up</option>
+							<option value="Not sure">Not sure</option>
 						</select>
 					</div>
 
 				</main>
 				<footer class="modal__footer">
-					<button class="modal__btn modal__btn-primary">Submit</button>
+					<button class="modal__btn modal__btn-primary" id="modal-submit">Submit</button>
 				</footer>
 			</div>
 		</div>

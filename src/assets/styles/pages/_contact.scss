@@ -6,9 +6,10 @@
         align-items: center;
         background-image: url(../../images/contact-banner.png);
         background-size: cover;
-        min-height: 90vh;
+        min-height: 100vh;
         position: relative;
-        @include breakpoint (xl) {
+
+        @include breakpoint(md) {
             min-height: 80vh;
         }
     }
@@ -53,7 +54,10 @@
         position: absolute;
         flex-direction: column;     
         font-family: 'Open Sans';
-        bottom: 7em;
+        bottom: 1.5em;
+        @include breakpoint (md) {
+            bottom: 5em;
+        }
     }
 
     .input-container {
@@ -76,16 +80,26 @@
             background-color: transparent;
             color: whitesmoke;
             font-family: 'Open Sans';
+            font-size: 1em;
         }
 
         #submit {
             font-family: 'Open Sans';
             color: whitesmoke;
+            font-size: 1em;
+            font-weight: 600;
             margin-top: 0.25em;
             padding: 0.5em;
             border: 1px solid whitesmoke;
             background-color: transparent;
             width: 100%;
+
+            &:hover {
+                transition: 0.5s;
+                background-color: whitesmoke;
+                color: black;
+                cursor: pointer;
+            }
         }
     }
 
@@ -94,6 +108,11 @@
         flex-direction: column;
         flex-wrap: wrap;
         width: 100%;
+        input {
+            color: whitesmoke;
+            font-family: 'Open Sans';
+            font-size: 1em;
+        }
         @include breakpoint (md){
             flex-direction: row;
             flex-wrap: nowrap;

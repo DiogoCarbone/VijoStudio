@@ -21,12 +21,15 @@
     }
 
     .modal__container {
-        background-color: rgba($color: black, $alpha: 0.7);
+        background-color: rgba($color: black, $alpha: 1);
         padding: 1em;
         max-width: 750px;
-        max-height: 100vh;
+        max-height: 90vh;
         border-radius: 4px;
         overflow-y: scroll;
+        @include breakpoint (md) {
+            overflow-y: hidden;
+        }
         box-sizing: border-box;
     }
 
@@ -79,6 +82,7 @@
             border: 1px solid white;
         }
         textarea {
+            font-family: 'Open Sans', sans-serif;
             background-color: transparent;
             border: 1px solid white;
             color: whitesmoke;
@@ -88,7 +92,7 @@
 
     #myList {
         color: whitesmoke;
-        background-color: transparent;
+        background-color: black;
         border-color: whitesmoke;
         padding: 1em;
         option {

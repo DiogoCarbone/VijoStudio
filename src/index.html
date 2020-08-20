@@ -13,6 +13,7 @@
 </head>
 
 <body id="index-page">
+	<button class="float-btn" id="request-quote-btn">Request Quote</button>
 	<div id="navbar">
 		<div class="vijo-logo">
 			<svg preserveAspectRatio="xMidYMid meet" id="comp-kbs9co60svgcontent"
@@ -327,9 +328,9 @@
 					</a>
 				</ul>
 			</div>
-			<div class="li-links">
+<!-- 			<div class="li-links">
 				<button id="request-quote-btn">Request Quote</button>
-			</div>
+			</div> -->
 		</div>
 	</div>
 	<div id="banner">
@@ -640,7 +641,7 @@
 					<input type="text" class="text-input" name="contactemail" placeholder="" id="client-email" />
 				</div>
 				<div class="input-container">
-					<input type="submit" id="submit" value="Submit" />
+					<button id="submit">Submit</button>
 				</div>
 			</div>
 		</div>
@@ -672,16 +673,16 @@
 					<div class="input-container" id="contact-name">
 						<span>Contact Name *</span>
 						<input 
-						id="phone-input" 
+						id="modal-client-name" 
 						type="text" 
 						class="form-text-input" 
-						name="contact-name" 
+						name="client-name" 
 						placeholder="">
 					</div>
 					<div class="input-container" id="email-address">
 						<span>Email *</span>
 						<input 
-						id="phone-input" 
+						id="email-address" 
 						type="text" 
 						class="form-text-input" 
 						name="email-address" 
@@ -699,13 +700,13 @@
 					<div class="input-container" id="company-name">
 						<span>Company *</span>
 						<input 
-						id="phone-input" 
+						id="company-name" 
 						type="text" 
 						class="form-text-input" 
 						name="company-name" 
 						placeholder="">
 					</div>
-					<div class="input-container" id="phone-number">
+					<div class="input-container" id="project-description">
 						<span>Short project description *</span>
 						<textarea 
 						id="tellus-input" 
@@ -719,21 +720,20 @@
 					<div class="input-container" id="budget-range">
 						<span>Budget Range *</span>
 						<select id="myList">
-							<option value="1">$1500 - $3000</option>
-							<option value="2">$3000 - $6000</option>
-							<option value="3">$6000 - $10000</option>
-							<option value="4">$10000 and up</option>
-							<option value="4">Not sure</option>
+							<option value="$1500 - $3000">$1500 - $3000</option>
+							<option value="$3000 - $6000">$3000 - $6000</option>
+							<option value="$6000 - $10000">$6000 - $10000</option>
+							<option value="$10000 and up">$10000 and up</option>
+							<option value="Not sure">Not sure</option>
 						</select>
 					</div>
 
 				</main>
 				<footer class="modal__footer">
-					<button class="modal__btn modal__btn-primary">Submit</button>
+					<button class="modal__btn modal__btn-primary" id="modal-submit">Submit</button>
 				</footer>
 			</div>
 		</div>
 	</div>
 </body>
-
 </html>
