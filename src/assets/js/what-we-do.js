@@ -70,4 +70,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		MicroModal.show('sisense-video');
 	  })
 
-
+	  document.querySelector('#request-quote-btn').addEventListener('click', () => {
+		MicroModal.show('request-quote');
+	  })
