@@ -50,10 +50,10 @@
     
     .form-container {
         display: flex;
+        position: absolute;
         flex-direction: column;     
         font-family: 'Open Sans';
-        padding-top: 6em;
-        
+        bottom: 7em;
     }
 
     .input-container {
