@@ -72,7 +72,7 @@ $pink: #BC3E6D;
 	font-weight: 600;
 	padding: 0.5em;
 	color: white;
-	background-color: rgba($color: black, $alpha: 0.6);
+	background-color: rgba($color: #04e04b, $alpha: 0.5);
 	border: 2px solid white;
 	border-radius: 5px;
 	cursor: pointer;
@@ -120,7 +120,7 @@ $pink: #BC3E6D;
 			}
 
 			img {
-				max-height: 50px;
+				max-height: 35px;
 				width: auto;
 				max-width: 100%;
 			}
@@ -130,8 +130,8 @@ $pink: #BC3E6D;
 				align-items: center;
 
 				img {
-					padding: 1em 0.5em 1em 1em;
-					max-height: 30px;
+					padding: 1em 0.5em 1em 5.5em;
+					max-height: 20px;
 				}
 			}
 		}

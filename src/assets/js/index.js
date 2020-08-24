@@ -70,7 +70,7 @@ const submit = document.getElementById('modal-submit');
 			message_html: document.getElementById('tellus-input').value,
 			client_phone: document.getElementById('phone-input').value,
 		};
-		console.log(templateParams);
+/* 		console.log(templateParams);
 		let completeForm = false;
 
 		for (let j = 0, j < Object.keys(templateParams) , i++) {
@@ -79,7 +79,7 @@ const submit = document.getElementById('modal-submit');
 			if (templateParams[key] == '') {
 				completeForm = false;
 			}
-		}
+		} */
 /* 		document.getElementById('modal-submit').innerHTML = 'Sending';
 		
 		emailjs.send('gmail','contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
