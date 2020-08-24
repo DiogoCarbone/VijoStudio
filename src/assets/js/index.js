@@ -23,7 +23,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 })
-
 	document.querySelector('#request-quote-btn').addEventListener('click', () => {
 		MicroModal.show('request-quote');
 	  })
@@ -46,18 +45,42 @@ window.addEventListener('DOMContentLoaded', () => {
 			});
 	})
 
+/* DATA ENTRY VALIDATION */
+
+const form = document.getElementById('form');
+const name = document.getElementById('name');
+const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const company = document.getElementById('company');
+const tellus = document.getElementById('tellus');
+const submit = document.getElementById('modal-submit');
+
+/* submit.addEventListener('click'); */
+
+/* END OF DATA ENTRY VALIDATION */
+
+
 	document.getElementById('modal-submit').addEventListener('click', () => {
 		const templateParams = {
 			to_name: 'Dennis',
 			from_name: document.getElementById('modal-client-name').value,
-			client_email: document.getElementById('email-address').value,
-			client_phone: document.getElementById('phone-input').value,
-			company_name: document.getElementById('company-name').value,
+			client_email: document.getElementById('modal-email-address').value,
+			company_name: document.getElementById('modal-company-name').value,
 			budget_range: document.getElementById('myList').value,
 			message_html: document.getElementById('tellus-input').value,
+			client_phone: document.getElementById('phone-input').value,
 		};
+		console.log(templateParams);
+		let completeForm = false;
 
-		document.getElementById('modal-submit').innerHTML = 'Sending';
+		for (let j = 0, j < Object.keys(templateParams) , i++) {
+			console.log(key);
+			console.log(templateParams[key]);
+			if (templateParams[key] == '') {
+				completeForm = false;
+			}
+		}
+/* 		document.getElementById('modal-submit').innerHTML = 'Sending';
 		
 		emailjs.send('gmail','contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
 			.then((response) => {
@@ -66,5 +89,5 @@ window.addEventListener('DOMContentLoaded', () => {
 			}, (err) => {
 			   console.log('FAILED...', err);
 			   document.getElementById('modal-submit').innerHTML = 'Please Try Again';
-			});
+			}); */
 	})

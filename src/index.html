@@ -638,7 +638,7 @@
 				</div>
 				<div class="input-container">
 					<span>Email*</span>
-					<input type="text" class="text-input" name="contactemail" placeholder="" id="client-email" />
+					<input type="text" class="email-input" name="contactemail" placeholder="" id="client-email" />
 				</div>
 				<div class="input-container">
 					<button id="submit">Submit</button>
@@ -677,16 +677,18 @@
 						type="text" 
 						class="form-text-input" 
 						name="client-name" 
-						placeholder="">
+						placeholder=""
+						required>
 					</div>
 					<div class="input-container" id="email-address">
 						<span>Email *</span>
 						<input 
-						id="email-address" 
+						id="modal-email-address" 
 						type="text" 
-						class="form-text-input" 
+						class="email-input" 
 						name="email-address" 
-						placeholder="">
+						placeholder=""
+						required>
 					</div>
 					<div class="input-container" id="phone-number">
 						<span>Phone</span>
@@ -700,11 +702,12 @@
 					<div class="input-container" id="company-name">
 						<span>Company *</span>
 						<input 
-						id="company-name" 
+						id="modal-company-name" 
 						type="text" 
 						class="form-text-input" 
 						name="company-name" 
-						placeholder="">
+						placeholder=""
+						required>
 					</div>
 					<div class="input-container" id="project-description">
 						<span>Short project description *</span>
@@ -713,7 +716,8 @@
 						class="form-text-input" 
 						rows="6" 
 						name="project-description" 
-						placeholder=""></textarea>
+						placeholder=""
+						required></textarea>
 					</div>
 
 

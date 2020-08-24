@@ -96,6 +96,7 @@ $pink: #BC3E6D;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
+		padding: 0.5em 0;
 
 		.vijo-partners-pair-container {
 			display: flex;
@@ -105,12 +106,13 @@ $pink: #BC3E6D;
 
 			div {
 				&:last-child {
+					margin-top: 0.5em;
 					margin-left: 1.5em;
 				}
 			}
 
 			&:first-child {
-				margin: 0 0.5em;
+				margin: 0.5em 0.5em;
 			}
 
 			&:last-child {
@@ -150,7 +152,7 @@ $pink: #BC3E6D;
 		font-family: 'Open Sans', sans-serif;
 		max-width: 980px;
 		margin: 0 auto;
-		padding: 0em 0 2em 0;
+		padding: 0em 0 2.5em 0;
 
 		svg {
 			height: 3em;
@@ -163,6 +165,7 @@ $pink: #BC3E6D;
 	}
 
 	#pink-text {
+		padding-left: 0.5em;
 		color: $pink;
 		font-weight: 700;
 		letter-spacing: 0.15em;

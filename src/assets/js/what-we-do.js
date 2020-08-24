@@ -3,6 +3,7 @@
 import 'Styles/main.scss';
 import MicroModal from 'micromodal';
 import emailjs from 'emailjs-com';
+import Inputmask from 'inputmask'
 
 const menuBtn = document.querySelector('.menu-btn');
 const navbarLinks = document.querySelector('#navbar-links');
