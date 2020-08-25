@@ -26,16 +26,33 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	/* MASKS */
 
-	const variavelX = new Inputmask({
+	const phoneNumber = new Inputmask({
 		alias: 'numeric',
 		rightAlign: false,
 	});
 
-	variavelX.mask(document.getElementById('phone-input'));
+	const emailFormat = new Inputmask({
+		mask: "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
+		greedy: false,
+		onBeforePaste: function (pastedValue, opts) {
+			pastedValue = pastedValue.toLowerCase();
+			return pastedValue.replace("mailto:", "");
+		},
+		definitions: {
+			'*': {
+				validator: "[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]",
+				casing: "lower"
+			}
+		}
+	});
+
+	emailFormat.mask(document.querySelector('.email-input'));
+	phoneNumber.mask(document.getElementById('phone-input'));
 
 
 
 })
+
 document.querySelector('#request-quote-btn').addEventListener('click', () => {
 	MicroModal.show('request-quote');
 })
@@ -48,15 +65,18 @@ document.getElementById('submit').addEventListener('click', () => {
 
 	let allValid = true;
 
-	for (let x = 0; x < formInputs.length; x++) {
-		const isRequired = formInputs[x].dataset.obrigatorio;
+	for (let i = 0; i < formInputs.length; i++) {
+		const isRequired = formInputs[i].dataset.obrigatorio;
 		if (isRequired == "true") {
 			console.log('checando');
 			/* AQUI PRECISA CHECAR SE É VAZIO OU NÃO */
-			if (formInputs[x].value == "") {
+			if (formInputs[i].value === "") {
 				allValid = false;
 				console.log('valor inválido');
-				break;
+				formInputs[i].classList.add("mandatory");
+				formInputs[i].placeholder = 'Please complete this field';
+			} else {
+				formInputs[i].classList.remove("mandatory");
 			}
 		} else {
 			/* AQUI NÂO */
@@ -74,60 +94,62 @@ document.getElementById('submit').addEventListener('click', () => {
 		}
 		document.getElementById('submit').innerHTML = 'Sending';
 
-		emailjs.send('gmail', 'contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
-			.then((response) => {
-				console.log('SUCCESS!', response.status, response.text);
-				document.getElementById('submit').innerHTML = 'Email Sent';
-			}, (err) => {
-				console.log('FAILED...', err);
-				document.getElementById('submit').innerHTML = 'Please Try Again';
-			});
+		/* 		emailjs.send('gmail', 'contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
+					.then((response) => {
+						console.log('SUCCESS!', response.status, response.text);
+						document.getElementById('submit').innerHTML = 'Email Sent';
+					}, (err) => {
+						console.log('FAILED...', err);
+						document.getElementById('submit').innerHTML = 'Please Try Again';
+					}); */
+
 	}
-})
-
-/* DATA ENTRY VALIDATION */
-
-const form = document.getElementById('form');
-const name = document.getElementById('name');
-const email = document.getElementById('email');
-const phone = document.getElementById('phone');
-const company = document.getElementById('company');
-const tellus = document.getElementById('tellus');
-const submit = document.getElementById('modal-submit');
-
-/* submit.addEventListener('click'); */
-
-/* END OF DATA ENTRY VALIDATION */
+});
 
 
-document.getElementById('modal-submit').addEventListener('click', () => {
-	const templateParams = {
-		to_name: 'Dennis',
-		from_name: document.getElementById('modal-client-name').value,
-		client_email: document.getElementById('modal-email-address').value,
-		company_name: document.getElementById('modal-company-name').value,
-		budget_range: document.getElementById('myList').value,
-		message_html: document.getElementById('tellus-input').value,
-		client_phone: document.getElementById('phone-input').value,
-	};
-	/* 		console.log(templateParams);
-			let completeForm = false;
+	document.getElementById('modal-submit').addEventListener('click', () => {
+		const formInputs = document.querySelectorAll('.input-container input, .input-container textarea');
+		console.log(formInputs);
 
-			for (let j = 0, j < Object.keys(templateParams) , i++) {
-				console.log(key);
-				console.log(templateParams[key]);
-				if (templateParams[key] == '') {
-					completeForm = false;
+		let allValid = true;
+
+		for (let i = 0; i < formInputs.length; i++) {
+			const isRequired = formInputs[i].dataset.obrigatorio;
+			console.log(isRequired);
+			if (isRequired == "true") {
+				console.log('checando');
+				/* AQUI PRECISA CHECAR SE É VAZIO OU NÃO */
+				if (formInputs[i].value === "") {
+					allValid = false;
+					console.log('valor inválido');
+					formInputs[i].classList.add("mandatory");
+					formInputs[i].placeholder = 'Please complete this field';
+				} else {
+					formInputs[i].classList.remove("mandatory");
 				}
-			} */
-	/* 		document.getElementById('modal-submit').innerHTML = 'Sending';
-			
-			emailjs.send('gmail','contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
+			} else {
+				/* AQUI NÂO */
+				console.log('não precisa checar');
+			}
+		}
+		const templateParams = {
+			to_name: 'Dennis',
+			from_name: document.getElementById('modal-client-name').value,
+			client_email: document.getElementById('modal-email-address').value,
+			company_name: document.getElementById('modal-company-name').value,
+			budget_range: document.getElementById('myList').value,
+			message_html: document.getElementById('tellus-input').value,
+			client_phone: document.getElementById('phone-input').value = "" ? document.getElementById('phone-input').value : "Not Provided",
+		};
+
+		document.getElementById('modal-submit').innerHTML = 'Sending';
+
+		/* 		emailjs.send('gmail', 'contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
 				.then((response) => {
-				   console.log('SUCCESS!', response.status, response.text);
-				   document.getElementById('modal-submit').innerHTML = 'Email Sent';
+					console.log('SUCCESS!', response.status, response.text);
+					document.getElementById('modal-submit').innerHTML = 'Email Sent';
 				}, (err) => {
-				   console.log('FAILED...', err);
-				   document.getElementById('modal-submit').innerHTML = 'Please Try Again';
+					console.log('FAILED...', err);
+					document.getElementById('modal-submit').innerHTML = 'Please Try Again';
 				}); */
-})
+});

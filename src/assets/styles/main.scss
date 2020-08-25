@@ -56,6 +56,16 @@ $pink: #BC3E6D;
 	background-color: black;
 }
 
+.mandatory {
+	border-color: $yellow !important;
+	::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: red;
+		opacity: 1; /* Firefox */
+	  }
+	textarea {
+		border-color: $yellow !important;
+	}
+}
 
 .float-btn {
 	position: fixed;

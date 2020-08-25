@@ -47,4 +47,6 @@ window.addEventListener('DOMContentLoaded', () => {
 			   document.getElementById('submit').innerHTML = 'Please Try Again';
 			});
 	})
-
+	document.querySelector('#request-quote-btn').addEventListener('click', () => {
+		MicroModal.show('request-quote');
+	})

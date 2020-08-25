@@ -12,6 +12,7 @@
 </head>
 
 <body id="contact">
+    <button class="float-btn" id="request-quote-btn">Request Quote</button>
     <div class="menu-btn">
         <div class="menu-btn__burger"></div>
     </div>
@@ -362,38 +363,94 @@
         </div>
     </div>
     <footer>
-        <!--         <div id="footer-container">
-            <div id="footer-title-container">
-                <span>
-                    Let's talk
-                </span>
-            </div>
-            <div id="contact-form-container">
-                <div class="input-container">
-                    <span>Name*</span>
-                    <input type="text" class="text-input" name="clientname" placeholder="" id="client-name" />
-                </div>
-                <div class="input-container">
-                    <span>Email*</span>
-                    <input type="text" class="text-input" name="contactemail" placeholder="" id="client-email" />
-                </div>
-                <div class="input-container">
-                    <input type="submit" id="submit" value="Submit" />
-                </div>
-            </div>
-        </div> -->
-        <div id="social-media-info">
-            <div id="social-media-icons">
-                <a href="https://www.youtube.com/channel/UC3YAOS0u-Amzn7lT-0mIvAQ?view_as=subscriber" id="yt-icon"></a>
-                <a href="https://www.linkedin.com/checkpoint/challengesV2/AQHTZvAXsbr17wAAAXPeoXllamkgUiNNeNKHxwJ2pnLzwJm2SM20iMbhOEy5AutP2O-fSj-T0C1pcCcMpy7V5vOcbV9h-4TkKQ"
-                    id="in-icon"></a>
-                <a href="https://www.facebook.com/vijostudio/?view_public_for=102818094592327" id="fb-icon"></a>
-                <a href="https://www.instagram.com/denis_sench/" id="ig-icon"></a>
-            </div>
-            <div id="contact-image">
-                <img src="../src/assets/images/footer-img.png">
-            </div>
-        </div>
-        </div>
+		<div id="footer-container">
+			<div id="footer-title-container">
+				<span>
+					Let's talk
+				</span>
+			</div>
+			<div id="contact-form-container">
+				<div class="input-container">
+					<span>Name *</span>
+					<input type="text" class="text-input" name="clientname" placeholder="" id="client-name"
+						data-obrigatorio="true" />
+				</div>
+				<div class="input-container">
+					<span>Email *</span>
+					<input type="text" class="email-input" name="contactemail" placeholder="" id="client-email"
+						data-obrigatorio="true" />
+				</div>
+				<div class="input-container">
+					<button id="submit">Submit</button>
+				</div>
+			</div>
+			<div id="social-media-info">
+				<div id="social-media-icons">
+					<a href="https://www.youtube.com/channel/UC3YAOS0u-Amzn7lT-0mIvAQ?view_as=subscriber" id="yt-icon"></a>
+					<a href="https://www.linkedin.com/checkpoint/challengesV2/AQHTZvAXsbr17wAAAXPeoXllamkgUiNNeNKHxwJ2pnLzwJm2SM20iMbhOEy5AutP2O-fSj-T0C1pcCcMpy7V5vOcbV9h-4TkKQ"
+						id="in-icon"></a>
+					<a href="https://www.facebook.com/vijostudio/?view_public_for=102818094592327" id="fb-icon"></a>
+					<div id="vijo-trademark">
+						<span>© vijo 2020</span>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		</div>
     </footer>
+    <div class="modal micromodal-slide" id="request-quote" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+				<header class="modal__header">
+					<h2 class="modal__title" id="modal-1-title">
+						request a quote
+					</h2>
+					<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+				</header>
+				<main class="modal__content" id="modal-1-content">
+					<div class="input-container" id="contact-name">
+						<span>Contact Name *</span>
+						<input id="modal-client-name" type="text" class="form-text-input" name="client-name" placeholder=""
+						data-obrigatorio="true">
+					</div>
+					<div class="input-container" id="email-address">
+						<span>Email *</span>
+						<input id="modal-email-address" type="text" class="email-input" name="email-address" placeholder=""
+						data-obrigatorio="true">
+					</div>
+					<div class="input-container" id="phone-number">
+						<span>Phone</span>
+						<input id="phone-input" type="text" class="form-text-input" name="phone-number" placeholder="" data-obrigatorio="false">
+					</div>
+					<div class="input-container" id="company-name">
+						<span>Company *</span>
+						<input id="modal-company-name" type="text" class="form-text-input" name="company-name" placeholder=""
+						data-obrigatorio="true">
+					</div>
+					<div class="input-container" id="project-description">
+						<span>Short project description *</span>
+						<textarea id="tellus-input" class="form-text-input" rows="6" name="project-description" placeholder=""
+						data-obrigatorio="true"></textarea>
+					</div>
+
+
+					<div class="input-container" id="budget-range">
+						<span>Budget Range *</span>
+						<select id="myList">
+							<option value="$1500 - $3000">$1500 - $3000</option>
+							<option value="$3000 - $6000">$3000 - $6000</option>
+							<option value="$6000 - $10000">$6000 - $10000</option>
+							<option value="$10000 and up">$10000 and up</option>
+							<option value="Not sure">Not sure</option>
+						</select>
+					</div>
+
+				</main>
+				<footer class="modal__footer">
+					<button class="modal__btn modal__btn-primary" id="modal-submit">Submit</button>
+				</footer>
+			</div>
+		</div>
+	</div>
 </body>

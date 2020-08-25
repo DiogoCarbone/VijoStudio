@@ -583,14 +583,14 @@
 			</div>
 			<div id="contact-form-container">
 				<div class="input-container">
-					<span>Name*</span>
+					<span>Name *</span>
 					<input type="text" class="text-input" name="clientname" placeholder="" id="client-name"
 						data-obrigatorio="true" />
 				</div>
 				<div class="input-container">
-					<span>Email</span>
+					<span>Email *</span>
 					<input type="text" class="email-input" name="contactemail" placeholder="" id="client-email"
-						data-obrigatorio="false" />
+						data-obrigatorio="true" />
 				</div>
 				<div class="input-container">
 					<button id="submit">Submit</button>
@@ -625,26 +625,26 @@
 					<div class="input-container" id="contact-name">
 						<span>Contact Name *</span>
 						<input id="modal-client-name" type="text" class="form-text-input" name="client-name" placeholder=""
-							required>
+						data-obrigatorio="true">
 					</div>
 					<div class="input-container" id="email-address">
 						<span>Email *</span>
 						<input id="modal-email-address" type="text" class="email-input" name="email-address" placeholder=""
-							required>
+						data-obrigatorio="true">
 					</div>
 					<div class="input-container" id="phone-number">
 						<span>Phone</span>
-						<input id="phone-input" type="text" class="form-text-input" name="phone-number" placeholder="">
+						<input id="phone-input" type="text" class="form-text-input" name="phone-number" placeholder="" data-obrigatorio="false">
 					</div>
 					<div class="input-container" id="company-name">
 						<span>Company *</span>
 						<input id="modal-company-name" type="text" class="form-text-input" name="company-name" placeholder=""
-							required>
+						data-obrigatorio="true">
 					</div>
 					<div class="input-container" id="project-description">
 						<span>Short project description *</span>
 						<textarea id="tellus-input" class="form-text-input" rows="6" name="project-description" placeholder=""
-							required></textarea>
+						data-obrigatorio="true"></textarea>
 					</div>
 
 
