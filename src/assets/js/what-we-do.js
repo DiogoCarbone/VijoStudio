@@ -69,7 +69,26 @@ document.getElementById('modal-submit').addEventListener('click', () => {
 })
 
 document.querySelector('#monday').addEventListener('click', () => {
-	MicroModal.show('monday-video');
+	const modalContent = [
+		`<div class="modal micromodal-slide" id="monday-video" aria-hidden="true">`,
+		`<div class="modal__overlay" tabindex="-1" data-micromodal-close>`,
+		`<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">`,
+		`<main class="modal__content" id="modal-1-content">`,
+		`<iframe src="https://www.youtube.com/embed/Kk7Q2jZSEI4" frameborder="0"`,
+		`allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"`,
+		`allowfullscreen></iframe>`,
+		`</main>`,
+		`</div>`,
+		`</div>`,
+		`</div>`,
+	].join('');
+
+	document.querySelector('body').insertAdjacentHTML('beforeend', modalContent);
+	MicroModal.show('monday-video', {
+		onClose: (modal) => {
+			document.getElementById(modal.id).remove();
+		}
+	});
 })
 document.querySelector('#melio-loan').addEventListener('click', () => {
 	MicroModal.show('melio-loan-video');
@@ -80,9 +99,6 @@ document.querySelector('#poalim').addEventListener('click', () => {
 document.querySelector('#guardicore').addEventListener('click', () => {
 	MicroModal.show('guardicore-video');
 })
-/* 	  document.querySelector('#gala').addEventListener('click', () => {
-		MicroModal.show('#gala-video');
-	  }) */
 document.querySelector('#melio-online').addEventListener('click', () => {
 	MicroModal.show('melio-online-video');
 })
