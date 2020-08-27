@@ -1,5 +1,12 @@
 
 #contact { 
+    .vijo-logo {
+        top: -1em;
+        @include breakpoint(lg) {
+            top: 1em;
+        }
+    }
+
     #banner { 
         display: flex;
         flex-direction: column;
@@ -9,7 +16,7 @@
         min-height: 100vh;
         position: relative;
 
-        @include breakpoint(md) {
+        @include breakpoint(lg) {
             min-height: 80vh;
         }
     }
@@ -19,6 +26,11 @@
         font-family: 'Open Sans';
         text-transform: uppercase;
         position: relative;
+
+        :placeholder-shown {
+            font-size: 0.5em;
+        }
+
         #white-letters {
             font-size: 2.7em;
             color: whitesmoke;
@@ -55,17 +67,19 @@
         flex-direction: column;     
         font-family: 'Open Sans';
         bottom: 1.5em;
+        width: 90%;
         @include breakpoint (md) {
             bottom: 5em;
+            width: auto;
         }
     }
 
-    .input-container {
+    .contact-container {
         color: whitesmoke;
         display: flex;
         flex-direction: column;
         padding-top: 1em;
-        
+        padding-right: 0.5em;
         input {
             margin-top: 0.25em;
             border: 1px solid whitesmoke;
@@ -83,7 +97,7 @@
             font-size: 1em;
         }
 
-        #submit {
+        #contact-page-submit {
             font-family: 'Open Sans';
             color: whitesmoke;
             font-size: 1em;

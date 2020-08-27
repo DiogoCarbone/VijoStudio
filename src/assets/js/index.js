@@ -26,7 +26,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	/* MASKS */
 
-	const phoneNumber = new Inputmask({
+/* 	const phoneNumber = new Inputmask({
 		alias: 'numeric',
 		rightAlign: false,
 	});
@@ -48,14 +48,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	emailFormat.mask(document.querySelector('.email-input'));
 	phoneNumber.mask(document.getElementById('phone-input'));
-
-
-
+ */
 })
 
 document.querySelector('#request-quote-btn').addEventListener('click', () => {
 	MicroModal.show('request-quote');
 })
+
+/* BOTTOM PAGE MAIL SYSTEM SCRIPT */
 
 document.getElementById('submit').addEventListener('click', () => {
 
@@ -69,7 +69,7 @@ document.getElementById('submit').addEventListener('click', () => {
 		const isRequired = formInputs[i].dataset.obrigatorio;
 		if (isRequired == "true") {
 			console.log('checando');
-			/* AQUI PRECISA CHECAR SE É VAZIO OU NÃO */
+			/* CHECKING FOR EMPTY ENTRIES */
 			if (formInputs[i].value === "") {
 				allValid = false;
 				console.log('valor inválido');
@@ -78,9 +78,6 @@ document.getElementById('submit').addEventListener('click', () => {
 			} else {
 				formInputs[i].classList.remove("mandatory");
 			}
-		} else {
-			/* AQUI NÂO */
-			console.log('não precisa checar');
 		}
 	}
 
@@ -94,18 +91,19 @@ document.getElementById('submit').addEventListener('click', () => {
 		}
 		document.getElementById('submit').innerHTML = 'Sending';
 
-		/* 		emailjs.send('gmail', 'contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
+				emailjs.send('gmail', 'contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
 					.then((response) => {
 						console.log('SUCCESS!', response.status, response.text);
 						document.getElementById('submit').innerHTML = 'Email Sent';
 					}, (err) => {
 						console.log('FAILED...', err);
 						document.getElementById('submit').innerHTML = 'Please Try Again';
-					}); */
+					});
 
 	}
 });
 
+/* START OF QUOTE MODAL MAILING SCRIPT */
 
 	document.getElementById('modal-submit').addEventListener('click', () => {
 		const formInputs = document.querySelectorAll('.input-container input, .input-container textarea');
@@ -118,7 +116,7 @@ document.getElementById('submit').addEventListener('click', () => {
 			console.log(isRequired);
 			if (isRequired == "true") {
 				console.log('checando');
-				/* AQUI PRECISA CHECAR SE É VAZIO OU NÃO */
+				/* CHECKING FOR EMPTY ENTRIES */
 				if (formInputs[i].value === "") {
 					allValid = false;
 					console.log('valor inválido');
@@ -127,11 +125,10 @@ document.getElementById('submit').addEventListener('click', () => {
 				} else {
 					formInputs[i].classList.remove("mandatory");
 				}
-			} else {
-				/* AQUI NÂO */
-				console.log('não precisa checar');
 			}
 		}
+
+		if(allValid === true) {
 		const templateParams = {
 			to_name: 'Dennis',
 			from_name: document.getElementById('modal-client-name').value,
@@ -144,12 +141,13 @@ document.getElementById('submit').addEventListener('click', () => {
 
 		document.getElementById('modal-submit').innerHTML = 'Sending';
 
-		/* 		emailjs.send('gmail', 'contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
+				emailjs.send('gmail', 'contact_page_message', templateParams, 'user_Cyzt5zhpOEbvOcpYYLBlc')
 				.then((response) => {
 					console.log('SUCCESS!', response.status, response.text);
 					document.getElementById('modal-submit').innerHTML = 'Email Sent';
 				}, (err) => {
 					console.log('FAILED...', err);
 					document.getElementById('modal-submit').innerHTML = 'Please Try Again';
-				}); */
+				});
+			}
 });

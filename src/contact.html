@@ -340,25 +340,25 @@
                 </span>
             </div>
             <div id="trio-container">
-                <div class="input-container">
+                <div class="contact-container">
                     <span>Name *</span>
-                    <input id="name-input" type="text" class="form-text-input" name="name" placeholder="">
+                    <input id="name-input" type="text" class="form-text-input" name="name" placeholder="" data-obrigatorio="true">
                 </div>
-                <div class="input-container">
+                <div class="contact-container">
                     <span>Email *</span>
-                    <input id="email-input" type="text" class="form-text-input" name="email" placeholder="">
+                    <input id="email-input" type="text" class="form-text-input" name="email" placeholder="" data-obrigatorio="true">
                 </div>
-                <div class="input-container" id="phone-number">
+                <div class="contact-container" id="phone-number">
                     <span>Phone</span>
                     <input id="phone-input" type="text" class="form-text-input" name="phone" placeholder="">
                 </div>
             </div>
-                <div class="input-container">
-                    <span style="text-transform: none;">Your Story</span>
-                    <textarea id="tellus-input" class="form-text-input" rows="10" name="tellus" placeholder=""></textarea>
+                <div class="contact-container">
+                    <span style="text-transform: none;">Your Story *</span>
+                    <textarea id="yourstory-input" class="form-text-input" rows="10" name="tellus" placeholder="" data-obrigatorio="true"></textarea>
                 </div>
-                <div class="input-container">
-                    <button id="submit">Submit</button>
+                <div class="contact-container">
+                    <button id="contact-page-submit">Submit</button>
                 </div>
         </div>
     </div>
@@ -399,7 +399,7 @@
 		</div>
 		</div>
     </footer>
-    <div class="modal micromodal-slide" id="request-quote" aria-hidden="true">
+	<div class="modal micromodal-slide" id="request-quote" aria-hidden="true">
 		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
 			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
 				<header class="modal__header">
