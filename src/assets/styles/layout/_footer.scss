@@ -35,7 +35,6 @@ footer {
 		flex-direction: row;
 		flex-wrap: wrap;
 		align-items: flex-end;
-		justify-content: center;
 
 		span {
 			color: whitesmoke;
@@ -46,7 +45,7 @@ footer {
 	}
 
 	.input-container {
-		padding: 0.5em 1em;
+		padding: 0.5em 0;
 		display: flex;
 		flex-direction: column;
 		min-width: 250px;
@@ -69,6 +68,7 @@ footer {
 
 		&:last-child {
 			padding-top: 1.5em;
+			justify-self: center;
 		}
 
 		#submit {
@@ -96,11 +96,12 @@ footer {
 	#social-media-info {
 		display: flex;
 		flex-direction: column;
-		padding-top: 1em;
+		margin-top: 2em;
 		justify-content: flex-start;
 		#vijo-trademark {
 			display: flex;
 			align-items: center;
+			margin-top: 0.5em;
 			padding-left: 1em;
 		}
 		@include breakpoint(lg) {
@@ -111,9 +112,6 @@ footer {
 				align-items: center;
 			}
 		}
-	}
-
-	#social-media-icons {
 	}
 
 	#yt-icon {
