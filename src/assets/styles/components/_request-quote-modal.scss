@@ -27,7 +27,8 @@
         max-height: 90vh;
         border-radius: 4px;
         overflow-y: scroll;
-        @include breakpoint (md) {
+        @include breakpoint (lg) {
+            max-height: 100vh;
             overflow-y: hidden;
         }
         box-sizing: border-box;
@@ -73,6 +74,7 @@
     .input-container {
         display: flex;
         flex-direction: column;
+        position: relative;
         input {
             font-family: 'Open Sans', sans-serif;
             color: whitesmoke;
@@ -88,6 +90,29 @@
             color: whitesmoke;
             font-size: 1em;
         }
+        .custom-select {
+            position: relative;
+
+            select {
+                display: flex;
+                -webkit-appearance: none;
+                background-color: transparent;   
+            }
+
+            .custom-arrow {
+                position: absolute;
+                display: block;
+                height: 1em;
+                width: 1em;
+                top: 40%;
+                right: 1em;
+                width: 0;
+                height: 0;
+                border-left: 0.5em solid transparent;
+                border-right: 0.5em solid transparent;
+                border-top: 0.75em solid white;
+            }
+        }
     }
 
     #myList {
@@ -95,6 +120,7 @@
         background-color: black;
         border-color: whitesmoke;
         padding: 1em;
+        width: 100%;
         option {
             color: white;
             background-color: transparent;

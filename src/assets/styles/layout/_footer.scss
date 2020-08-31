@@ -35,12 +35,19 @@ footer {
 		flex-direction: row;
 		flex-wrap: wrap;
 		align-items: flex-end;
-
+		justify-content: center;
 		span {
 			color: whitesmoke;
 			font-family: 'Open Sans', sans-serif;
 			font-size: 1em;
 			padding-bottom: 0.5em;
+		}
+
+		@include breakpoint (lg) {
+			flex-wrap: nowrap;
+			.spacing {
+				margin-left: 1em;
+			}
 		}
 	}
 
@@ -77,11 +84,15 @@ footer {
 			padding: 1em 0.5em;
 			background-color: rgba($color: black, $alpha: 0.6);
 			border: 1px solid white;
-			border-radius: 5px;
 			font-weight: 600;
 			cursor: pointer;
+			transition: 250ms ease-in-out;
+
+			@include breakpoint (lg) {
+				padding: 0.75em;
+			}
+
 			&:hover {
-				transition: 0.5s;
 				background-color: whitesmoke;
 				color: black;
 				border: 2px solid black;

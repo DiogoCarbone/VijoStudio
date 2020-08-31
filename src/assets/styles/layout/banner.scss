@@ -129,7 +129,7 @@ body {
 		font-size: 1em;
 		color: white;
 		padding: 0.5em 3em;
-
+		transition:  250ms ease-in-out;
 		@include breakpoint(md) {
 			font-size: 1em;
 			padding: 0.5em 8em;
@@ -146,7 +146,6 @@ body {
 	background-color: whitesmoke;
 	color: black;
 	font-family: 'Open Sans', sans-serif;
-	transition: 500ms;
 	cursor: pointer;
 }
 

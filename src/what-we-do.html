@@ -423,7 +423,7 @@
 			</div>
 		</div>
 	</div>
-	<footer>
+    <footer>
 		<div id="footer-container">
 			<div id="footer-title-container">
 				<span>
@@ -438,11 +438,11 @@
 				</div>
 				<div class="input-container">
 					<span>Email *</span>
-					<input type="text" class="email-input" name="contactemail" placeholder="" id="client-email"
+					<input type="text" class="email-input spacing" name="contactemail" placeholder="" id="client-email"
 						data-obrigatorio="true" />
 				</div>
 				<div class="input-container">
-					<button id="submit">Submit</button>
+					<button id="submit" class="spacing">Submit</button>
 				</div>
 			</div>
 			<div id="social-media-info">
@@ -456,10 +456,9 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
 		</div>
-	</footer>
+    </footer>
 
 	<div class="modal micromodal-slide" id="request-quote" aria-hidden="true">
 		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
@@ -498,14 +497,17 @@
 
 
 					<div class="input-container" id="budget-range">
-						<span>Budget Range *</span>
-						<select id="myList">
-							<option value="$1500 - $3000">$1500 - $3000</option>
-							<option value="$3000 - $6000">$3000 - $6000</option>
-							<option value="$6000 - $10000">$6000 - $10000</option>
-							<option value="$10000 and up">$10000 and up</option>
-							<option value="Not sure">Not sure</option>
-						</select>
+                        <span>Budget Range *</span>
+                        <div class="custom-select">
+                            <select id="myList">
+                                <option value="$1500 - $3000">$1500 - $3000</option>
+                                <option value="$3000 - $6000">$3000 - $6000</option>
+                                <option value="$6000 - $10000">$6000 - $10000</option>
+                                <option value="$10000 and up">$10000 and up</option>
+                                <option value="Not sure">Not sure</option>
+                            </select>
+                            <span class="custom-arrow"></span>
+                        </div>
 					</div>
 
 				</main>
